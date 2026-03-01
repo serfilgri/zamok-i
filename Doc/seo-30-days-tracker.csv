@@ -1,0 +1,21 @@
+priority,week,task,status,owner,notes
+P0,1,Подключить Google Search Console,pending,,
+P0,1,Подключить Яндекс Вебмастер,pending,,
+P0,1,Подключить Яндекс Метрику и цели,pending,,
+P0,1,Отправить sitemap.xml в GSC и Вебмастер,pending,,
+P0,1,Снять baseline позиций по ядру,pending,,
+P1,2,Добавить блок Гарантия и документы на целевую страницу,completed,Codex,Добавлен блок trust в zamena-zamka-vhodnoy-dveri.html
+P1,2,Добавить блок Как формируется цена,completed,Codex,Усилен блок условий и прозрачной структуры цены
+P1,2,Добавить блок Районы выезда СПб и ЛО,completed,Codex,Добавлен блок districts на целевой странице
+P1,2,Добавить 3-5 кейсов с фото,completed,Codex,Добавлены фото-кейсы в service/zamena/zamena-zamkov-spb.html (3 кейса)
+P1,2,Проверить JSON-LD и валидность schema,completed,Codex,JSON-LD на целевой странице валидирован локально
+P1,3,Создать страницу Замена замка после взлома,completed,Codex,Создана service/zamena/zamena-zamka-posle-vzloma.html + добавлена в sitemap и services-data
+P1,3,Создать страницу Замена сувальдного замка,completed,Codex,Создана service/zamena/zamena-suvaldnogo-zamka.html + добавлена в sitemap и services-data
+P1,3,Создать страницу Замена цилиндрового замка,completed,Codex,Создана service/zamena/zamena-cilindrovogo-zamka.html + добавлена в sitemap и services-data
+P1,3,Создать страницу Ночная замена замка,completed,Codex,Создана service/zamena/nochnaya-zamena-zamka.html + добавлена в sitemap и services-data
+P1,3,Настроить внутреннюю перелинковку между новыми страницами,completed,Codex,Добавлены взаимные ссылки между страницами zamena-zamka-vhodnoy-dveri, zamena-zamka-posle-vzloma, zamena-suvaldnogo-zamka, zamena-cilindrovogo-zamka и nochnaya-zamena-zamka
+P2,4,Актуализировать Google Business Profile,pending,,
+P2,4,Актуализировать Яндекс Бизнес,pending,,
+P2,4,Собрать 10-20 новых реальных отзывов,pending,,
+P2,4,Получить 5-10 локальных упоминаний и ссылок,pending,,
+P0,4,Сравнить позиции/CTR/конверсии с baseline,pending,,

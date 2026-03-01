@@ -1,0 +1,11 @@
+.deploy.env
+.deploy.last_success
+.deploy.pending.tmp
+node_modules/
+.git/
+.idea/
+.vscode/
+_pgbackup/
+_pginfo/
+.DS_Store
+hosting-deploy-*.zip

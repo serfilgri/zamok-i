@@ -1,0 +1,24 @@
+{
+  "name": "agency-website",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/tailwind-custom.css -o ./assets/css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/tailwind-custom.css -o ./assets/css/styles.css --watch",
+    "sync:services": "node scripts/sync-services-pages.js",
+    "watch:services": "node scripts/sync-services-pages.js --watch",
+    "images:optimize": "node scripts/optimize-images.js",
+    "images:watch": "node scripts/optimize-images.js --watch",
+    "images:force": "node scripts/optimize-images.js --force",
+    "deploy": "bash scripts/deploy-rsync.sh",
+    "deploy:dry": "bash scripts/deploy-rsync.sh --dry-run",
+    "deploy:full": "bash scripts/deploy-rsync.sh --delete",
+    "deploy:pending:list": "bash scripts/deploy-rsync.sh --pending-list",
+    "deploy:pending": "bash scripts/deploy-rsync.sh --pending",
+    "deploy:pending:dry": "bash scripts/deploy-rsync.sh --pending --dry-run",
+    "deploy:pending:reset": "bash scripts/deploy-rsync.sh --pending-reset"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "emergency_opening": 1200,
+  "key_copy": 1500,
+  "car_opening": 1500,
+  "lock_repair": 1000,
+  "lock_replacement": 1500,
+  "door_security_upgrade": 2500,
+  "lock_installation": 1800,
+  "handle_installation": 1000,
+  "master_replacement": 1500,
+  "entry_lock_repair": 1200,
+  "interroom_install": 1300,
+  "interroom_mortise": 1400,
+  "lock_service": 1200,
+  "apartment_opening": 1200,
+  "workshop_repair": 1000
+}

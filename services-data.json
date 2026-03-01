@@ -1,0 +1,202 @@
+[
+  {
+    "id": "lock-replacement",
+    "title": "Замена замка в двери квартиры",
+    "description": "Подбор и замена замка в двери квартиры с выездом мастера по Санкт-Петербургу.",
+    "category": "installation",
+    "icon": "construction",
+    "pagePath": "service/zamena/zamena-zamka-dveri.html",
+    "priceId": "lock_replacement",
+    "featured": true
+  },
+  {
+    "id": "emergency-opening",
+    "title": "Аварийное вскрытие замков",
+    "description": "Аккуратное вскрытие дверных замков без повреждений с быстрым выездом мастера.",
+    "category": "emergency",
+    "icon": "lock_open",
+    "pagePath": "service/vskrytie/avariynoe-vskrytie-zamkov.html",
+    "priceId": "emergency_opening",
+    "featured": true
+  },
+  {
+    "id": "lock-repair",
+    "title": "Ремонт дверных замков",
+    "description": "Диагностика и восстановление работы замков с регулировкой механизма и гарантией.",
+    "category": "repair",
+    "icon": "home_repair_service",
+    "pagePath": "service/remont/remont-zamkov-dvernyh.html",
+    "priceId": "lock_repair",
+    "featured": true
+  },
+  {
+    "id": "replace-entry-lock",
+    "title": "Замена замка входной двери",
+    "description": "Срочная замена замка входной двери с подбором совместимого и надежного механизма.",
+    "category": "installation",
+    "icon": "key",
+    "pagePath": "service/zamena/zamena-zamka-vhodnoy-dveri.html",
+    "priceId": "lock_replacement",
+    "featured": true
+  },
+  {
+    "id": "replace-lever-lock",
+    "title": "Замена сувальдного замка",
+    "description": "Замена сувальдного замка с подбором совместимой модели и настройкой хода ригелей.",
+    "category": "installation",
+    "icon": "security",
+    "pagePath": "service/zamena/zamena-suvaldnogo-zamka.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-cylinder-lock",
+    "title": "Замена цилиндрового замка",
+    "description": "Замена цилиндрового замка с подбором совместимого цилиндра и проверкой корректной работы.",
+    "category": "installation",
+    "icon": "tune",
+    "pagePath": "service/zamena/zamena-cilindrovogo-zamka.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "night-lock-replacement",
+    "title": "Ночная замена замка",
+    "description": "Ночная замена замка с выездом мастера в вечернее и ночное время по Санкт-Петербургу.",
+    "category": "installation",
+    "icon": "bedtime",
+    "pagePath": "service/zamena/nochnaya-zamena-zamka.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-after-break-in",
+    "title": "Замена замка после взлома",
+    "description": "Срочная замена замка после взлома с восстановлением посадочного места и усилением узла.",
+    "category": "installation",
+    "icon": "gpp_bad",
+    "pagePath": "service/zamena/zamena-zamka-posle-vzloma.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-door-locks",
+    "title": "Замена дверных замков",
+    "description": "Комплексная замена дверных замков с выездом мастера по Санкт-Петербургу.",
+    "category": "installation",
+    "icon": "construction",
+    "pagePath": "service/zamena/zamena-dvernyh-zamkov.html",
+    "priceId": "lock_replacement",
+    "featured": true
+  },
+  {
+    "id": "entry-lock-repair",
+    "title": "Ремонт замка входной двери",
+    "description": "Точечный ремонт замка входной двери без лишней замены всего механизма.",
+    "category": "repair",
+    "icon": "lock",
+    "pagePath": "service/remont/remont-zamka-vhodnoy.html",
+    "priceId": "entry_lock_repair",
+    "featured": true
+  },
+  {
+    "id": "lock-installation-main",
+    "title": "Установка замков",
+    "description": "Установка дверных замков с подбором модели под тип двери и задачу по безопасности.",
+    "category": "installation",
+    "icon": "vpn_key",
+    "pagePath": "service/ustanovka/ustanovka-zamkov-zamkov.html",
+    "priceId": "lock_installation",
+    "featured": false
+  },
+  {
+    "id": "master-replacement",
+    "title": "Мастер по замене дверных замков",
+    "description": "Выезд мастера по замене замков в квартире, доме или офисе в удобное для вас время.",
+    "category": "installation",
+    "icon": "engineering",
+    "pagePath": "service/master-zamene-dvernyh.html",
+    "priceId": "master_replacement",
+    "featured": false
+  },
+  {
+    "id": "lock-service",
+    "title": "Служба вскрытия замков",
+    "description": "Оперативная служба вскрытия замков с круглой логистикой по районам Санкт-Петербурга.",
+    "category": "emergency",
+    "icon": "badge",
+    "pagePath": "service/sluzhba-vskrytiyu-zamkov.html",
+    "priceId": "lock_service",
+    "featured": false
+  },
+  {
+    "id": "call-master-opening",
+    "title": "Вызвать мастера по вскрытию",
+    "description": "Срочный вызов мастера для вскрытия замка и восстановления доступа в помещение.",
+    "category": "emergency",
+    "icon": "support_agent",
+    "pagePath": "service/vyzvat-mastera-vskrytiyu.html",
+    "priceId": "emergency_opening",
+    "featured": false
+  },
+  {
+    "id": "apartment-opening",
+    "title": "Вскрытие замков в квартире",
+    "description": "Безопасное вскрытие квартирных замков при утере ключей или заклинивании механизма.",
+    "category": "emergency",
+    "icon": "apartment",
+    "pagePath": "service/vskrytie/vskrytie-zamkov-kvartire.html",
+    "priceId": "apartment_opening",
+    "featured": false
+  },
+  {
+    "id": "car-opening",
+    "title": "Вскрытие замков машины",
+    "description": "Открытие автомобилей разных марок без повреждений кузова и штатных замков.",
+    "category": "emergency",
+    "icon": "directions_car",
+    "pagePath": "service/vskrytie/vskrytie-zamkov-mashiny.html",
+    "priceId": "car_opening",
+    "featured": false
+  },
+  {
+    "id": "workshop-repair",
+    "title": "Мастерская по ремонту замков",
+    "description": "Ремонт и восстановление замков в формате профильной мастерской с диагностикой.",
+    "category": "repair",
+    "icon": "handyman",
+    "pagePath": "service/remont/masterskaya-remontu-zamkov.html",
+    "priceId": "workshop_repair",
+    "featured": false
+  },
+  {
+    "id": "handle-installation",
+    "title": "Установка дверных ручек",
+    "description": "Монтаж и замена дверных ручек, защелок и сопутствующей дверной фурнитуры.",
+    "category": "installation",
+    "icon": "door_front",
+    "pagePath": "service/ustanovka/ustanovka-dvernyh-ruchek.html",
+    "priceId": "handle_installation",
+    "featured": false
+  },
+  {
+    "id": "interroom-install",
+    "title": "Установка замка в межкомнатную дверь",
+    "description": "Установка замка в межкомнатную дверь с аккуратной подгонкой и регулировкой.",
+    "category": "installation",
+    "icon": "meeting_room",
+    "pagePath": "service/ustanovka/ustanovka-zamka-mezhkomnatnuyu.html",
+    "priceId": "interroom_install",
+    "featured": false
+  },
+  {
+    "id": "interroom-mortise",
+    "title": "Врезка замка в межкомнатную дверь",
+    "description": "Точная врезка замка в межкомнатную дверь без сколов и повреждения полотна.",
+    "category": "installation",
+    "icon": "carpenter",
+    "pagePath": "service/ustanovka/vrezka-zamka-mezhkomnatnuyu.html",
+    "priceId": "interroom_mortise",
+    "featured": false
+  }
+]

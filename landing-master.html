@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Мастер-шаблон лендинга</title>
+    <meta
+      name="description"
+      content="Шаблон посадочной страницы. Меняйте заголовки, тексты, блоки и контакты под каждую услугу."
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="navbar__inner">
+          <a class="navbar__logo" href="/index.html">
+            <div class="navbar__logo-icon">
+              <span class="material-symbols-outlined">lock</span>
+            </div>
+            <span class="navbar__brand">zamok-i</span>
+          </a>
+          <ul class="navbar__links">
+            <li>
+              <a href="/services.html">Услуги</a>
+            </li>
+            <li>
+              <a href="/about.html">О нас</a>
+            </li>
+            <li>
+              <a href="/process.html">Как работаем</a>
+            </li>
+            <li>
+              <a href="/pricing.html">Цены</a>
+            </li>
+            <li>
+              <a href="/contact.html">Контакты</a>
+            </li>
+          </ul>
+          <a class="navbar__cta" href="tel:+79219488172">Вызвать мастера</a>
+          <button class="navbar__burger" id="burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="/services.html">Услуги</a>
+        <a href="/about.html">О нас</a>
+        <a href="/process.html">Как работаем</a>
+        <a href="/pricing.html">Цены</a>
+        <a href="/contact.html">Контакты</a>
+        <a class="mobile-menu__cta" href="tel:+79219488172">Вызвать мастера</a>
+      </div>
+    </nav>
+
+    <!-- EDIT: главный оффер -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <div class="hero__label">
+              <div class="hero__label-line"></div>
+              <span>Посадочная страница услуги</span>
+            </div>
+            <h1 class="hero__title">
+              Заголовок <span class="highlight">под услугу</span>
+            </h1>
+            <p class="hero__subtitle">
+              Короткое УТП: что делаете, за сколько времени, в каком районе и какая гарантия.
+            </p>
+            <div class="hero__buttons">
+              <button class="btn btn--black">Позвонить</button>
+              <button class="btn btn--white">Узнать цену</button>
+            </div>
+          </div>
+          <div class="hero__image-wrap">
+            <div class="hero__image-box">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;q=80"
+                alt="Фото услуги"
+                class="grayscale"
+              />
+            </div>
+            <div class="hero__badge">
+              <strong>15 мин</strong>
+              выезд
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDIT: оставьте только нужные карточки -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="services__header">
+          <div>
+            <div class="tag" style="margin-bottom: 16px">Что входит</div>
+            <h2 class="section-title">Услуги</h2>
+            <div class="section-line"></div>
+          </div>
+        </div>
+        <div class="services__grid">
+          <div class="service-card">
+            <span class="service-card__num">01</span>
+            <span class="material-symbols-outlined service-card__icon">construction</span>
+            <h3>Услуга 1</h3>
+            <p>Краткое описание услуги и выгода для клиента.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-card__num">02</span>
+            <span class="material-symbols-outlined service-card__icon">verified</span>
+            <h3>Услуга 2</h3>
+            <p>Краткое описание услуги и сроки выполнения.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-card__num">03</span>
+            <span class="material-symbols-outlined service-card__icon">home_repair_service</span>
+            <h3>Услуга 3</h3>
+            <p>Краткое описание услуги и гарантии.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDIT: цены под конкретную посадочную -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="pricing__header">
+          <div class="tag" style="margin-bottom: 16px">Пакеты</div>
+          <h2 class="section-title">Стоимость</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="pricing__grid">
+          <div class="pricing-card">
+            <div class="pricing-card__name">Базовый</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">от</span>
+              <span class="pricing-card__amount">1 500</span>
+              <span class="pricing-card__period">₽</span>
+            </div>
+            <div class="pricing-card__divider"></div>
+            <ul class="pricing-card__features">
+              <li><span class="material-symbols-outlined">check</span>Пункт 1</li>
+              <li><span class="material-symbols-outlined">check</span>Пункт 2</li>
+              <li><span class="material-symbols-outlined">check</span>Пункт 3</li>
+            </ul>
+            <button class="btn btn--white" style="width: 100%; justify-content: center">Выбрать</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__grid">
+          <div>
+            <div class="tag" style="margin-bottom: 20px">Связаться</div>
+            <h2 class="contact__title">Оставьте <span>заявку</span></h2>
+            <div class="contact__info">
+              <div class="contact__info-item">
+                <span class="material-symbols-outlined">phone</span>
+                <div>
+                  <strong>Телефон</strong>
+                  +7 (900) 000-00-00
+                </div>
+              </div>
+              <div class="contact__info-item">
+                <span class="material-symbols-outlined">schedule</span>
+                <div>
+                  <strong>График</strong>
+                  Ежедневно, 08:00-22:00
+                </div>
+              </div>
+            </div>
+          </div>
+          <form class="contact__form" onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Имя</label>
+                <input id="name" type="text" placeholder="Ваше имя" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input id="phone" type="tel" placeholder="+7 (900) 000-00-00" required />
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn btn--yellow"
+              style="width: 100%; justify-content: center; font-size: 1rem"
+            >
+              Отправить заявку →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand">
+              <div class="footer__logo-icon">
+                <span class="material-symbols-outlined">lock</span>
+              </div>
+              <span class="footer__brand-name">zamok-i</span>
+            </div>
+            <p class="footer__desc">
+              Профессиональные услуги по замкам в Санкт-Петербурге и Ленобласти
+              с 2014 года. Работаем ежедневно с 08:00 до 22:00.
+            </p>
+            <div class="footer__socials">
+              <div class="footer__social">VK</div>
+              <div class="footer__social">TG</div>
+              <div class="footer__social">WA</div>
+            </div>
+          </div>
+          <div>
+            <div class="footer__col-title">Услуги</div>
+            <ul class="footer__links">
+              <li>
+                <a href="/services.html">Вскрытие замков</a>
+              </li>
+              <li>
+                <a href="/services.html">Дубликаты ключей</a>
+              </li>
+              <li>
+                <a href="/services.html">Замена личинки</a>
+              </li>
+              <li>
+                <a href="/services.html">Защита двери</a>
+              </li>
+              <li>
+                <a href="/services.html">Ремонт замков</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__col-title">Компания</div>
+            <ul class="footer__links">
+              <li>
+                <a href="/about.html">О нас</a>
+              </li>
+              <li>
+                <a href="/process.html">Как работаем</a>
+              </li>
+              <li>
+                <a href="/index.html#testimonials">Отзывы</a>
+              </li>
+              <li>
+                <a href="/pricing.html">Цены</a>
+              </li>
+              <li>
+                <a href="/faq.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__col-title">Контакты</div>
+            <ul class="footer__links">
+              <li>
+                <a href="tel:+79219488172">+7 (921) 948-81-72</a>
+              </li>
+              <li>
+                <a href="mailto:info@zamok-i.ru">info@zamok-i.ru</a>
+              </li>
+              <li>
+                <a href="/contact.html">Санкт-Петербург, 08:00–22:00</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copy">© 2024 zamok-i. Все права защищены.</p>
+          <div class="footer__legal">
+            <a href="/policy.html">Политика конфиденциальности</a>
+            <a href="/offer.html">Договор оферты</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
