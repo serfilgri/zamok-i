@@ -15,7 +15,8 @@
     "deploy:pending:list": "bash scripts/deploy-rsync.sh --pending-list",
     "deploy:pending": "bash scripts/deploy-rsync.sh --pending",
     "deploy:pending:dry": "bash scripts/deploy-rsync.sh --pending --dry-run",
-    "deploy:pending:reset": "bash scripts/deploy-rsync.sh --pending-reset"
+    "deploy:pending:reset": "bash scripts/deploy-rsync.sh --pending-reset",
+    "deploy:mark": "bash scripts/mark-deployed.sh"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.13",
