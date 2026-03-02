@@ -167,9 +167,9 @@ function setServicePrice(serviceId, nextPrice) {
 
 window.setServicePrice = setServicePrice;
 
-// Replace with your CRM/n8n/Make webhook URL.
-// Example: "https://example.com/webhook/lead"
-const LEAD_WEBHOOK_URL = "";
+// Same-origin endpoint for lead forms.
+// Can be overridden by setting window.LEAD_WEBHOOK_URL before this script loads.
+const LEAD_WEBHOOK_URL = window.LEAD_WEBHOOK_URL || "/api/lead.php";
 
 function initServicesFilter() {
   const filterWrap = document.getElementById("servicesFilter");
@@ -267,14 +267,6 @@ async function handleForm(e) {
   const btn = e.target.querySelector('[type="submit"]');
   if (!btn) return;
 
-  if (!LEAD_WEBHOOK_URL) {
-    console.warn("Lead webhook URL is not configured.");
-    alert(
-      "Форма пока не подключена к CRM/webhook. Укажите LEAD_WEBHOOK_URL в assets/js/main.js."
-    );
-    return;
-  }
-
   const previousText = btn.textContent;
   const payload = collectFormPayload(e.target);
 
@@ -292,6 +284,16 @@ async function handleForm(e) {
     });
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    let responseJson = null;
+    const contentType = response.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      responseJson = await response.json();
+    }
+
+    if (responseJson && responseJson.ok === false) {
+      throw new Error(responseJson.error || "Lead submit failed");
+    }
 
     setSubmitState(btn, "Заявка отправлена ✓", {
       background: "#000",

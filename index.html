@@ -1540,6 +1540,7 @@
       });
 
       const form = document.getElementById("contactForm");
+      const leadEndpoint = "/api/lead.php";
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -1557,8 +1558,28 @@
         btn.disabled = true;
         btn.textContent = "Отправляем...";
 
+        const payload = {
+          name: form.querySelector("#f-name").value.trim(),
+          phone,
+          service: form.querySelector("#f-service").value.trim(),
+          message: form.querySelector("#f-message").value.trim(),
+          page: window.location.href,
+          form: "contactForm",
+          createdAt: new Date().toISOString(),
+        };
+
         try {
-          await new Promise((res) => setTimeout(res, 800));
+          const response = await fetch(leadEndpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+          const data = await response.json();
+          if (!data || data.ok !== true) throw new Error(data?.error || "send_failed");
+
           showMsg("Заявка принята! Перезвоним в течение 5 минут.", "success");
           form.reset();
         } catch {
