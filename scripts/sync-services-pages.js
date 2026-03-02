@@ -50,9 +50,12 @@ function buildLandingHtml(pagePath, title, sharedLayout) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>${title} | zamok-i</title>
     <meta name="description" content="Посадочная страница услуги: ${title}" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet" />
-    <link href="${prefix}assets/css/styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="${prefix}assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="${prefix}assets/css/styles.css" rel="stylesheet" /></noscript>
   </head>
   <body>
     ${sharedLayout.nav}
