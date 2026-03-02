@@ -62,6 +62,29 @@
       rel="stylesheet"
     />
     <link href="../../assets/css/styles.css" rel="stylesheet" />
+    <style>
+      @media (min-width: 1024px) {
+        .hero.hero--wide .hero__grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 56px;
+        }
+
+        .hero.hero--wide .hero__image-box img {
+          height: 560px;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        .hero.hero--wide .hero__image-box img {
+          height: 420px;
+        }
+      }
+    </style>
+      <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+      <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffde00" />
   </head>
   <body class="service-landing">
     <nav class="navbar" id="navbar">
@@ -96,7 +119,7 @@
       </div>
     </nav>
 
-    <section class="hero" id="hero">
+    <section class="hero hero--wide" id="hero">
       <div class="container">
         <div class="hero__grid">
           <div>
@@ -151,24 +174,27 @@
             <span class="service-card__num">01</span>
             <h3>Установка новых ручек</h3>
             <p>
-              Монтируем комплект ручек с учетом толщины полотна и типа замкового
-              механизма.
+              Устанавливаем дверные ручки с учетом толщины полотна, типа
+              механизма и формата крепления. Выставляем ручки по оси, чтобы
+              ход был плавным и без перекоса.
             </p>
           </article>
           <article class="service-card">
             <span class="service-card__num">02</span>
             <h3>Замена изношенной фурнитуры</h3>
             <p>
-              Снимаем старые элементы, устанавливаем новые и корректируем
-              посадку.
+              Демонтируем старую фурнитуру, проверяем посадочные отверстия и
+              ставим новый комплект ручек. При необходимости корректируем
+              крепления и геометрию, чтобы исключить люфт.
             </p>
           </article>
           <article class="service-card">
             <span class="service-card__num">03</span>
             <h3>Регулировка защелки</h3>
             <p>
-              Настраиваем язычок и ответную планку для мягкого закрывания без
-              стука.
+              Настраиваем язычок, ответную планку и усилие закрывания, чтобы
+              дверь работала тихо, без стука и заедания при ежедневном
+              использовании.
             </p>
           </article>
         </div>
@@ -285,6 +311,119 @@
       </div>
     </section>
 
+    <section class="services" id="trust">
+      <div class="container">
+        <div class="services__header">
+          <div>
+            <div class="tag" style="margin-bottom: 16px">Гарантия результата</div>
+            <h2 class="section-title">Что важно при замене<br />и установке ручек</h2>
+            <div class="section-line"></div>
+          </div>
+        </div>
+        <div class="services__grid">
+          <article class="service-card">
+            <span class="service-card__num">01</span>
+            <h3>Точный интент услуги</h3>
+            <p>
+              Эта страница про дверные ручки и защелки. Если нужен монтаж
+              замкового корпуса, используйте
+              <a href="/service/ustanovka/ustanovka-zamka-mezhkomnatnuyu.html">установку замка в межкомнатную дверь</a>
+              или <a href="/service/ustanovka/vrezka-zamka-mezhkomnatnuyu.html">врезку замка</a>.
+            </p>
+          </article>
+          <article class="service-card">
+            <span class="service-card__num">02</span>
+            <h3>Согласованная стоимость</h3>
+            <p>
+              До начала работ называем цену с учетом типа ручек, состояния
+              посадки и необходимой регулировки. Дополнительные операции делаем
+              только после вашего подтверждения.
+            </p>
+          </article>
+          <article class="service-card">
+            <span class="service-card__num">03</span>
+            <h3>Проверка после монтажа</h3>
+            <p>
+              После установки проверяем работу ручки и язычка в нескольких
+              циклах, устраняем люфт и перекос, чтобы дверь закрывалась мягко и
+              корректно.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="cases">
+      <div class="container">
+        <div class="services__header">
+          <div>
+            <div class="tag" style="margin-bottom: 16px">Практика</div>
+            <h2 class="section-title">Кейсы по дверным<br />ручкам и защелкам</h2>
+            <div class="section-line"></div>
+          </div>
+        </div>
+        <div class="services__grid">
+          <article class="service-card">
+            <img
+              src="../../assets/images/webp/hero-800x480/zamok-s-zolotoy-ruchkoy-klyuch.webp"
+              alt="Установка нового комплекта дверных ручек"
+              width="800"
+              height="480"
+              loading="lazy"
+              decoding="async"
+              class="grayscale"
+              style="width: 100%; height: auto; border-radius: 14px; margin-bottom: 14px"
+            />
+            <span class="service-card__num">01</span>
+            <h3>Замена ручек в межкомнатной двери</h3>
+            <p>
+              Ситуация: старая ручка люфтила и плохо возвращалась в исходное
+              положение. Решение: поставили новый комплект и настроили защелку.
+              Результат: мягкий ход без шума и заеданий.
+            </p>
+          </article>
+          <article class="service-card">
+            <img
+              src="../../assets/images/webp/hero-800x480/nastroika-cilindra-zamka-allen.webp"
+              alt="Регулировка язычка защелки после установки ручки"
+              width="800"
+              height="480"
+              loading="lazy"
+              decoding="async"
+              class="grayscale"
+              style="width: 100%; height: auto; border-radius: 14px; margin-bottom: 14px"
+            />
+            <span class="service-card__num">02</span>
+            <h3>Ручка установлена, но дверь стучит</h3>
+            <p>
+              Ситуация: после самостоятельной установки язычок бил в ответную
+              планку. Решение: скорректировали ось и посадку фурнитуры.
+              Результат: тихое закрывание без стука.
+            </p>
+          </article>
+          <article class="service-card">
+            <img
+              src="../../assets/images/webp/hero-800x480/zamena-cilindra-v-dveri.webp"
+              alt="Мастер устанавливает ручку с защелкой на дверь"
+              width="800"
+              height="480"
+              loading="lazy"
+              decoding="async"
+              class="grayscale"
+              style="width: 100%; height: auto; border-radius: 14px; margin-bottom: 14px"
+            />
+            <span class="service-card__num">03</span>
+            <h3>Монтаж ручки с защелкой в арендуемом жилье</h3>
+            <p>
+              Ситуация: нужна быстрая и аккуратная замена без переделки двери.
+              Решение: подобрали совместимую модель, установили и проверили
+              крепления. Результат: стабильная работа и аккуратный внешний вид.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="pricing-table" id="faq">
       <div class="container">
         <div class="pricing-table__header">
@@ -314,6 +453,87 @@
               перекосы.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-table" id="seo-text">
+      <div class="container">
+        <div class="pricing-table__header">
+          <div class="tag" style="margin-bottom: 16px">Подробно об услуге</div>
+          <h2 class="section-title">Установка дверных ручек в СПб<br />на межкомнатные и входные двери</h2>
+          <div class="section-line"></div>
+        </div>
+        <div
+          style="
+            background: #fff;
+            border: 1px solid #e9e9e9;
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+          "
+        >
+          <p style="margin: 0 0 14px; color: #333; line-height: 1.75">
+            Установка дверных ручек в Санкт-Петербурге востребована, когда
+            фурнитура износилась, люфтит или плохо возвращается в исходное
+            положение. Качественный монтаж ручек и защелки влияет не только на
+            комфорт, но и на срок службы двери: при неправильной посадке
+            увеличивается износ креплений, появляется стук и перекос.
+          </p>
+          <p style="margin: 0 0 14px; color: #333; line-height: 1.75">
+            Мы выполняем установку и замену дверных ручек с регулировкой
+            язычка и ответной планки. Перед началом работ проверяем тип двери,
+            состояние посадочных отверстий и совместимость комплекта. После
+            монтажа дверь закрывается плавно, без люфта и лишнего шума.
+          </p>
+          <p style="margin: 0; color: #333; line-height: 1.75">
+            Если требуется не ручка, а монтаж замкового механизма, переходите
+            на <a href="/service/ustanovka/ustanovka-zamka-mezhkomnatnuyu.html">установку замка в межкомнатную дверь</a>
+            или <a href="/service/ustanovka/vrezka-zamka-mezhkomnatnuyu.html">врезку замка</a>.
+            Для работ по замене механизма входной двери подходит
+            <a href="/service/zamena/zamena-dvernyh-zamkov.html">замена дверных замков</a>.
+          </p>
+
+          <div style="margin-top: 22px; overflow-x: auto">
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>Ситуация</th>
+                  <th>Что делаем</th>
+                  <th>Средний срок</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ручка болтается и люфтит</td>
+                  <td>Переустановка/замена комплекта и подтяжка креплений</td>
+                  <td class="price-val">20-50 мин</td>
+                </tr>
+                <tr>
+                  <td>Язычок защелки не попадает в планку</td>
+                  <td>Регулировка оси ручки и ответной части</td>
+                  <td class="price-val">20-40 мин</td>
+                </tr>
+                <tr>
+                  <td>Нужна новая ручка с защелкой</td>
+                  <td>Подбор и установка совместимой фурнитуры</td>
+                  <td class="price-val">30-70 мин</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            style="
+              margin-top: 18px;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px;
+            "
+          >
+            <a class="btn btn--black" href="tel:+79219488172">Позвонить мастеру</a>
+            <a class="btn btn--white" href="#contact">Оставить заявку</a>
+          </div>
         </div>
       </div>
     </section>
@@ -438,7 +658,7 @@
           {
             "@type": "Service",
             "name": "Установка дверных ручек",
-            "serviceType": "Монтаж дверных ручек и защелок",
+            "serviceType": "Установка и замена дверных ручек с регулировкой защелки",
             "provider": { "@id": "https://zamok-i.ru/#organization" },
             "areaServed": ["Санкт-Петербург", "Ленинградская область"],
             "url": "https://zamok-i.ru/service/ustanovka/ustanovka-dvernyh-ruchek.html"
