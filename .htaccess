@@ -1,2 +1,2 @@
-# Redirect old landing URL to new canonical URL
+# Emergency-safe .htaccess (minimal directives to avoid 500)
 Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html /service/zamena/zamena-zamka-vhodnoy-dveri.html
