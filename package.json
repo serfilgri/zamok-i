@@ -4,6 +4,8 @@
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind-custom.css -o ./assets/css/styles.css --minify",
     "watch:css": "tailwindcss -i ./assets/css/tailwind-custom.css -o ./assets/css/styles.css --watch",
+    "build:pages": "node scripts/build-pages.js",
+    "watch:pages": "node scripts/build-pages.js --watch",
     "sync:services": "node scripts/sync-services-pages.js",
     "watch:services": "node scripts/sync-services-pages.js --watch",
     "images:optimize": "node scripts/optimize-images.js",
@@ -16,7 +18,10 @@
     "deploy:pending": "bash scripts/deploy-rsync.sh --pending",
     "deploy:pending:dry": "bash scripts/deploy-rsync.sh --pending --dry-run",
     "deploy:pending:reset": "bash scripts/deploy-rsync.sh --pending-reset",
-    "deploy:mark": "bash scripts/mark-deployed.sh"
+    "deploy:mark": "bash scripts/mark-deployed.sh",
+    "build": "npm run build:css && npm run build:pages",
+    "watch": "npm-run-all --parallel watch:css watch:pages",
+    "cleanup:duplicates": "node scripts/cleanup-duplicates.js"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.13",

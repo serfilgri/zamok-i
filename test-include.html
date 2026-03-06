@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Тестовая страница | zamok-i</title>
+    <meta name="description" content="Пример страницы с использованием include-системы" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="assets/css/styles.css" rel="stylesheet" /></noscript>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffde00" />
+  </head>
+  <body>
+    <!--@@include 'includes/header.html' -->
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <div class="hero__label">
+              <div class="hero__label-line"></div>
+              <span>Пример использования</span>
+            </div>
+            <h1 class="hero__title">Тестовая страница</h1>
+            <p class="hero__subtitle">
+              Эта страница демонстрирует работу системы include-файлов.
+              Навигация и подвал загружаются из отдельных файлов.
+            </p>
+            <div class="hero__buttons">
+              <a class="btn btn--black" href="tel:+79219488172">Позвонить</a>
+              <a class="btn btn--white" href="/includes/README.md">Документация</a>
+            </div>
+          </div>
+          <div class="hero__image-wrap">
+            <div class="hero__image-box">
+              <img
+                src="assets/images/webp/hero-800x480/default-service.webp"
+                alt="Тест"
+                width="800"
+                height="480"
+                fetchpriority="high"
+                decoding="async"
+                class="grayscale"
+                onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" style="padding: 80px 0">
+      <div class="container">
+        <div class="tag" style="margin-bottom: 16px">Информация</div>
+        <h2 class="section-title">Как это <span>работает</span></h2>
+        <div class="section-line"></div>
+        <div class="services__grid" style="grid-template-columns: 1fr; margin-top: 32px">
+          <article class="service-card" style="cursor: text">
+            <h3>Структура страницы</h3>
+            <p>
+              Страница состоит из трёх основных частей: шапка (header), основной контент и подвал (footer).
+              Шапка и подвал хранятся в отдельных файлах в папке <code>includes/</code>.
+            </p>
+          </article>
+          <article class="service-card" style="cursor: text">
+            <h3>Сборка</h3>
+            <p>
+              При запуске <code>npm run build:pages</code> скрипт собирает все страницы,
+              подставляя содержимое include-файлов в нужные места.
+            </p>
+          </article>
+          <article class="service-card" style="cursor: text">
+            <h3>Обновление</h3>
+            <p>
+              Чтобы изменить навигацию или подвал на всём сайте, достаточно отредактировать
+              один файл в папке <code>includes/</code> и запустить сборку.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--@@include 'includes/sections/info-general.html' -->
+
+    <!--@@include 'includes/footer.html' -->
+
+    <script src="assets/js/main.js?v=20260306"></script>
+  </body>
+</html>
