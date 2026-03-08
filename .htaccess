@@ -1,2 +1,14 @@
 # Emergency-safe .htaccess (minimal directives to avoid 500)
 Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html /service/zamena/zamena-zamka-vhodnoy-dveri.html
+
+# Защита от clickjacking - запрет на отображения сайта в iframe
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Content-Security-Policy для защиты от XSS
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+    # Запрет MIME-sniffing для защиты от подмены типа контента
+    Header always set X-Content-Type-Options "nosniff"
+    # HSTS - принудительное использование HTTPS (1 год)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
