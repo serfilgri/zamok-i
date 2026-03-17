@@ -21,14 +21,15 @@ function formatPrice(price) {
 }
 
 function getSiteRootPrefix() {
-  const scriptEl = document.querySelector('script[src$="assets/js/main.js"]');
+  const scriptEl = document.querySelector('script[src*="assets/js/main.js"]');
   const src = scriptEl ? scriptEl.getAttribute("src") || "" : "";
   return src.replace(/assets\/js\/main\.js(?:\?.*)?$/, "");
 }
 
 function applyLoadedPrices(loadedPrices) {
   for (const [serviceId, price] of Object.entries(loadedPrices)) {
-    if (!Object.prototype.hasOwnProperty.call(SERVICE_PRICES, serviceId)) continue;
+    if (!Object.prototype.hasOwnProperty.call(SERVICE_PRICES, serviceId))
+      continue;
 
     const parsedPrice = Number(price);
     if (!Number.isFinite(parsedPrice) || parsedPrice <= 0) continue;
@@ -41,27 +42,52 @@ async function loadPrices() {
   const rootPrefix = getSiteRootPrefix();
 
   try {
-    const response = await fetch(`${rootPrefix}prices.json`, { cache: "no-store" });
+    const response = await fetch(`${rootPrefix}prices.json`, {
+      cache: "no-store",
+    });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const loadedPrices = await response.json();
     applyLoadedPrices(loadedPrices);
   } catch (error) {
-    console.warn("prices.json is unavailable, fallback prices are used:", error);
+    console.warn(
+      "prices.json is unavailable, fallback prices are used:",
+      error,
+    );
   }
 }
 
 async function loadServicesData() {
   const rootPrefix = getSiteRootPrefix();
 
+  // Сначала пробуем загрузить из inline-данных (для работы без сервера)
+  const inlineScript = document.getElementById("services-data");
+  if (inlineScript) {
+    try {
+      const data = JSON.parse(inlineScript.textContent);
+      if (Array.isArray(data)) {
+        console.log("Services loaded from inline data:", data.length, "items");
+        return data;
+      }
+    } catch (e) {
+      console.warn("Failed to parse inline services-data:", e);
+    }
+  }
+
+  // Если inline-данных нет, пробуем fetch
   try {
-    const response = await fetch(`${rootPrefix}services-data.json`, { cache: "no-store" });
+    const response = await fetch(`${rootPrefix}services-data.json`, {
+      cache: "no-store",
+    });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const data = await response.json();
     return Array.isArray(data) ? data : [];
   } catch (error) {
-    console.warn("services-data.json is unavailable, service cards are not rendered:", error);
+    console.warn(
+      "services-data.json is unavailable, service cards are not rendered:",
+      error,
+    );
     return [];
   }
 }
@@ -127,14 +153,34 @@ function renderServiceCard(item, index, mode) {
 }
 
 function renderServicesFromData(servicesData) {
+  console.log(
+    "renderServicesFromData called with:",
+    servicesData.length,
+    "items",
+  );
+
   const indexContainer = document.getElementById("indexServicesCards");
   const catalogContainer = document.getElementById("servicesCards");
+
+  console.log("indexServicesCards container:", indexContainer);
+  console.log("servicesCards container:", catalogContainer);
 
   const featured = servicesData.filter((item) => item.featured).slice(0, 6);
   const allItems = servicesData.filter((item) => item.pagePath);
 
+  console.log("Featured items:", featured.length);
+
   if (indexContainer) {
-    indexContainer.innerHTML = featured.map((item, index) => renderServiceCard(item, index, "catalog")).join("");
+    const html = featured
+      .map((item, index) => renderServiceCard(item, index, "catalog"))
+      .join("");
+    console.log(
+      "Rendering HTML to indexServicesCards:",
+      html.substring(0, 100) + "...",
+    );
+    indexContainer.innerHTML = html;
+  } else {
+    console.warn("indexServicesCards container not found!");
   }
 
   if (catalogContainer) {
@@ -219,7 +265,9 @@ document.querySelectorAll(".faq__question").forEach((btn) => {
     if (!item) return;
 
     const isOpen = item.classList.contains("open");
-    document.querySelectorAll(".faq__item").forEach((i) => i.classList.remove("open"));
+    document
+      .querySelectorAll(".faq__item")
+      .forEach((i) => i.classList.remove("open"));
 
     if (!isOpen) item.classList.add("open");
   });
@@ -256,7 +304,8 @@ function collectFormPayload(form) {
   });
 
   payload.page = window.location.href;
-  payload.form = form.getAttribute("id") || form.getAttribute("name") || "contact_form";
+  payload.form =
+    form.getAttribute("id") || form.getAttribute("name") || "contact_form";
   payload.createdAt = new Date().toISOString();
   return payload;
 }
@@ -332,11 +381,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 async function initPrices() {
-  await loadPrices();
+  console.log("initPrices() called");
+  try {
+    await loadPrices();
+  } catch (e) {
+    console.warn("loadPrices failed, continuing without prices:", e);
+  }
   const servicesData = await loadServicesData();
+  console.log("initPrices: servicesData loaded:", servicesData.length, "items");
   renderServicesFromData(servicesData);
   applyServicePrices();
   initServicesFilter();
+  console.log("initPrices() completed");
 }
 
 initPrices();

@@ -6,7 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
     <title>Служба замков СПб — вскрытие, ремонт, замена</title>
     <meta
       name="description"
@@ -20,6 +23,7 @@
       name="robots"
       content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
     />
+    1
     <link rel="canonical" href="https://zamok-i.ru/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
@@ -71,14 +75,208 @@
       "
     />
     <link
-      rel="preload"
       href="assets/css/styles.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/webp/hero-800x480/zamena-zamka-multipoint-closeup.webp"
+      fetchpriority="high"
+    />
+    <!-- Критический CSS для первого экрана -->
+    <style>
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+      }
+      .navbar__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+      }
+      .navbar__logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 1.25rem;
+        text-decoration: none;
+        color: #000;
+      }
+      .navbar__brand {
+        font-weight: 900;
+      }
+      .navbar__links {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 24px;
+      }
+      .navbar__links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+      }
+      .navbar__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: #22c55e;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .navbar__burger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+      .navbar__burger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #000;
+        margin: 4px 0;
+      }
+      .hero {
+        padding: 80px 0 60px;
+        background: #f5f5f5;
+      }
+      .hero__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero__label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #555;
+      }
+      .hero__label-line {
+        flex: 1;
+        height: 1px;
+        background: #ddd;
+      }
+      .hero__title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0 0 16px;
+      }
+      .hero__title .highlight {
+        color: #2563eb;
+      }
+      .hero__price-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: 700;
+      }
+      .hero__price-badge .from {
+        font-size: 0.75rem;
+        color: #666;
+      }
+      .hero__price-badge .amount {
+        font-size: 1.25rem;
+        color: #000;
+      }
+      .hero__subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #333;
+        max-width: 500px;
+      }
+      .hero__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+      .btn--black {
+        background: #000;
+        color: #fff;
+      }
+      .btn--green {
+        background: #22c55e;
+        color: #fff;
+      }
+      .btn--white {
+        background: #fff;
+        color: #000;
+        border: 1px solid #ddd;
+      }
+      .hero__trust {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 32px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #555;
+      }
+      .hero__trust-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hero__image-wrap {
+        position: relative;
+      }
+      .hero__image-box {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .hero__image-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      @media (min-width: 768px) {
+        .navbar__links {
+          display: flex;
+        }
+        .navbar__burger {
+          display: none;
+        }
+        .hero__grid {
+          grid-template-columns: 1.2fr 1fr;
+        }
+        .hero__trust {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
     <noscript><link href="assets/css/styles.css" rel="stylesheet" /></noscript>
     <script type="application/ld+json">
       {
@@ -278,7 +476,7 @@
               <span>Санкт-Петербург · Выезд ежедневно 08:00–22:00</span>
             </div>
             <h1 class="hero__title">
-              Служба замков<br />
+              Замена замков<br />
               в <span class="highlight">Санкт-Петербурге</span><br />
               за 30 минут
             </h1>
@@ -342,7 +540,7 @@
                 alt="Мастер меняет замок на входной двери в Санкт-Петербурге"
                 width="800"
                 height="480"
-                loading="eager"
+                fetchpriority="high"
               />
             </div>
             <div class="hero__badge" aria-label="Выезд за 30 минут">
@@ -531,6 +729,191 @@
         </div>
       </div>
     </section>
+
+    <!-- Блок популярных услуг для SEO и внутренней перелинковки -->
+    <section class="services" id="popular-services">
+      <div class="container">
+        <div class="services__header">
+          <div>
+            <div class="tag" style="margin-bottom: 16px">Популярные услуги</div>
+            <h2 class="section-title">Наши основные<br />направления</h2>
+            <div class="section-line"></div>
+          </div>
+          <p
+            style="
+              max-width: 420px;
+              font-size: 0.95rem;
+              font-weight: 600;
+              line-height: 1.6;
+              color: #555;
+            "
+          >
+            Быстрый переход к популярным услугам по замкам в Санкт-Петербурге
+          </p>
+        </div>
+        <div class="services__grid">
+          <article class="service-card">
+            <span class="material-symbols-outlined service-card__icon"
+              >lock_open</span
+            >
+            <h3>Аварийное вскрытие замков</h3>
+            <p>
+              Аккуратное вскрытие дверных замков без повреждений. Выезд мастера
+              за 30 минут.
+            </p>
+            <a
+              class="service-card__link"
+              href="/service/vskrytie/avariynoe-vskrytie-zamkov.html"
+            >
+              Подробнее
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+          <article class="service-card">
+            <span class="material-symbols-outlined service-card__icon"
+              >construction</span
+            >
+            <h3>Замена замка в двери</h3>
+            <p>
+              Подбор и замена замка в двери квартиры. Работа со всеми типами
+              дверей.
+            </p>
+            <a
+              class="service-card__link"
+              href="/service/zamena/zamena-zamka-dveri.html"
+            >
+              Подробнее
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+          <article class="service-card">
+            <span class="material-symbols-outlined service-card__icon"
+              >tune</span
+            >
+            <h3>Замена цилиндрового замка</h3>
+            <p>Замена личинки замка за 20 минут. Все классы секретности.</p>
+            <a
+              class="service-card__link"
+              href="/service/zamena/zamena-cilindrovogo-zamka.html"
+            >
+              Подробнее
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+          <article class="service-card">
+            <span class="material-symbols-outlined service-card__icon"
+              >home_repair_service</span
+            >
+            <h3>Ремонт дверных замков</h3>
+            <p>
+              Диагностика и восстановление работы замков. Регулировка механизма.
+            </p>
+            <a
+              class="service-card__link"
+              href="/service/remont/remont-zamkov-dvernyh.html"
+            >
+              Подробнее
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </article>
+        </div>
+        <div style="text-align: center; margin-top: 32px">
+          <a class="btn btn--white" href="/services.html">Все услуги</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Дополнительный блок всех услуг для SEO -->
+    <section class="services services--inner" id="all-services">
+      <div class="container">
+        <div class="services__header">
+          <div>
+            <div class="tag" style="margin-bottom: 16px">Все услуги</div>
+            <h2 class="section-title">Полный список<br />услуг по замкам</h2>
+            <div class="section-line"></div>
+            <p
+              style="
+                margin-top: 16px;
+                font-size: 0.95rem;
+                font-weight: 600;
+                line-height: 1.6;
+                color: #555;
+              "
+            >
+              Выберите нужную услугу из полного каталога работ по замкам в СПб
+            </p>
+          </div>
+        </div>
+        <div class="services__grid" id="indexServicesCards"></div>
+      </div>
+    </section>
+
+    <!-- Данные услуг для рендеринга карточек (inline, чтобы работало без fetch) -->
+    <script id="services-data" type="application/json">
+      [
+        {
+          "id": "lock-replacement",
+          "title": "Замена замка в двери квартиры",
+          "description": "Подбор и замена замка в двери квартиры с выездом мастера по Санкт-Петербургу.",
+          "category": "installation",
+          "icon": "construction",
+          "pagePath": "service/zamena/zamena-zamka-dveri.html",
+          "priceId": "lock_replacement",
+          "featured": true
+        },
+        {
+          "id": "emergency-opening",
+          "title": "Аварийное вскрытие замков",
+          "description": "Аккуратное вскрытие дверных замков без повреждений с быстрым выездом мастера.",
+          "category": "emergency",
+          "icon": "lock_open",
+          "pagePath": "service/vskrytie/avariynoe-vskrytie-zamkov.html",
+          "priceId": "emergency_opening",
+          "featured": true
+        },
+        {
+          "id": "lock-repair",
+          "title": "Ремонт дверных замков",
+          "description": "Диагностика и восстановление работы замков с регулировкой механизма и гарантией.",
+          "category": "repair",
+          "icon": "home_repair_service",
+          "pagePath": "service/remont/remont-zamkov-dvernyh.html",
+          "priceId": "lock_repair",
+          "featured": true
+        },
+        {
+          "id": "replace-entry-lock",
+          "title": "Замена замка входной двери",
+          "description": "Срочная замена замка входной двери с подбором совместимого и надежного механизма.",
+          "category": "installation",
+          "icon": "key",
+          "pagePath": "service/zamena/zamena-zamka-vhodnoy-dveri.html",
+          "priceId": "lock_replacement",
+          "featured": true
+        },
+        {
+          "id": "replace-door-locks",
+          "title": "Замена дверных замков",
+          "description": "Комплексная замена дверных замков с выездом мастера по Санкт-Петербургу.",
+          "category": "installation",
+          "icon": "construction",
+          "pagePath": "service/zamena/zamena-dvernyh-zamkov.html",
+          "priceId": "lock_replacement",
+          "featured": true
+        },
+        {
+          "id": "entry-lock-repair",
+          "title": "Ремонт замка входной двери",
+          "description": "Точечный ремонт замка входной двери без лишней замены всего механизма.",
+          "category": "repair",
+          "icon": "lock",
+          "pagePath": "service/remont/remont-zamka-vhodnoy.html",
+          "priceId": "entry_lock_repair",
+          "featured": true
+        }
+      ]
+    </script>
+
     <section class="problems" id="problems">
       <div class="container">
         <div class="problems__header">
@@ -1085,7 +1468,7 @@
     <section class="seo-block" id="info">
       <div class="container">
         <div class="seo-block__content" id="seoBlockContent">
-          <h2 class="section-title">Когда требуется замена замка</h2>
+          <h3 class="section-title">Когда требуется замена замка</h3>
           <p>
             Замена замков требуется не только после поломки. Чаще всего к нам
             обращаются, когда потеряны ключи, произошёл переезд в новую
@@ -1101,7 +1484,7 @@
             согласования приступает к установке.
           </p>
 
-          <h2 class="section-title">Замена замка входной двери</h2>
+          <h3 class="section-title">Замена замка входной двери</h3>
           <p>
             Входная дверь — главный элемент безопасности квартиры. Если механизм
             начал заедать, проворачиваться или плохо закрываться — это сигнал к
@@ -1115,7 +1498,7 @@
             броненакладками и противосъёмными элементами.
           </p>
 
-          <h2 class="section-title">Сколько стоит заменить замок в СПб</h2>
+          <h3 class="section-title">Сколько стоит заменить замок в СПб</h3>
           <p>
             Стоимость замены замка зависит от типа механизма и сложности работ.
             Базовая замена цилиндра занимает 15–20 минут и стоит от 1 500 ₽.
@@ -1128,7 +1511,7 @@
             фиксируется до начала работ и не меняется в процессе.
           </p>
 
-          <h2 class="section-title">Срочная замена замка с выездом мастера</h2>
+          <h3 class="section-title">Срочная замена замка с выездом мастера</h3>
           <p>
             В экстренных ситуациях важно быстро восстановить безопасность жилья.
             Мастер по замене замков приезжает в течение 30 минут по
@@ -1141,9 +1524,9 @@
             эксплуатации и выдаём гарантию на выполненные работы.
           </p>
 
-          <h2 class="section-title">
+          <h3 class="section-title">
             Почему выбирают нашу службу замены замков
-          </h2>
+          </h3>
           <ul>
             <li>Быстрый выезд по Санкт-Петербургу</li>
             <li>Честные фиксированные цены без скрытых доплат</li>
@@ -1281,7 +1664,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="f-service">Что нужно сделать</label>
+              <label for="f-service">Что ну��но сделать</label>
               <select id="f-service" name="service">
                 <option value="">Выберите услугу</option>
                 <option>Замена цилиндровой личинки</option>
@@ -1418,228 +1801,6 @@
       <span class="material-symbols-outlined">arrow_upward</span>
     </button>
 
-    <script>
-      "use strict";
-
-      const burger = document.getElementById("burger");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      burger.addEventListener("click", () => {
-        const isOpen = mobileMenu.classList.toggle("open");
-        burger.classList.toggle("active", isOpen);
-        burger.setAttribute("aria-expanded", String(isOpen));
-      });
-
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("open");
-          burger.classList.remove("active");
-          burger.setAttribute("aria-expanded", "false");
-        });
-      });
-
-      document.querySelectorAll(".faq__question").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const item = btn.closest(".faq__item");
-          const isOpen = item.classList.contains("open");
-
-          document.querySelectorAll(".faq__item").forEach((i) => {
-            i.classList.remove("open");
-            i.querySelector(".faq__question").setAttribute(
-              "aria-expanded",
-              "false",
-            );
-          });
-
-          if (!isOpen) {
-            item.classList.add("open");
-            btn.setAttribute("aria-expanded", "true");
-          }
-        });
-      });
-
-      const reviewsToggle = document.getElementById("reviewsToggle");
-      const reviewItems = document.querySelectorAll("[data-review-item]");
-
-      if (reviewsToggle && reviewItems.length > 6) {
-        reviewsToggle.addEventListener("click", () => {
-          const expanded =
-            reviewsToggle.getAttribute("aria-expanded") === "true";
-
-          reviewItems.forEach((item, index) => {
-            if (index >= 6) item.hidden = expanded;
-          });
-
-          reviewsToggle.setAttribute("aria-expanded", String(!expanded));
-          reviewsToggle.textContent = expanded
-            ? "Показать ещё 9 историй"
-            : "Свернуть отзывы";
-        });
-      }
-
-      const seoBlockContent = document.getElementById("seoBlockContent");
-      const seoBlockToggle = document.getElementById("seoBlockToggle");
-      const seoMobile = window.matchMedia("(max-width: 768px)");
-
-      function syncSeoBlock() {
-        if (!seoBlockContent || !seoBlockToggle) return;
-        if (seoMobile.matches) {
-          seoBlockContent.classList.add("is-collapsed");
-          seoBlockToggle.style.display = "inline-flex";
-          seoBlockToggle.setAttribute("aria-expanded", "false");
-          seoBlockToggle.textContent = "Показать полностью";
-        } else {
-          seoBlockContent.classList.remove("is-collapsed", "is-expanded");
-          seoBlockToggle.style.display = "none";
-          seoBlockToggle.setAttribute("aria-expanded", "false");
-        }
-      }
-
-      if (seoBlockContent && seoBlockToggle) {
-        syncSeoBlock();
-        seoMobile.addEventListener("change", syncSeoBlock);
-        seoBlockToggle.addEventListener("click", () => {
-          const expanded = seoBlockContent.classList.toggle("is-expanded");
-          seoBlockContent.classList.toggle("is-collapsed", !expanded);
-          seoBlockToggle.setAttribute("aria-expanded", String(expanded));
-          seoBlockToggle.textContent = expanded
-            ? "Свернуть текст"
-            : "Показать полностью";
-        });
-      }
-
-      const scrollTopBtn = document.getElementById("scrollTop");
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          scrollTopBtn.classList.toggle("visible", window.scrollY > 500);
-        },
-        { passive: true },
-      );
-
-      scrollTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          const id = this.getAttribute("href");
-          if (id === "#") return;
-          const target = document.querySelector(id);
-          if (target) {
-            e.preventDefault();
-            const navH = document.getElementById("navbar").offsetHeight;
-            const top =
-              target.getBoundingClientRect().top + window.scrollY - navH - 8;
-            window.scrollTo({ top, behavior: "smooth" });
-          }
-        });
-      });
-
-      const form = document.getElementById("contactForm");
-      const leadEndpoint = "/api/lead.php";
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const phone = form.querySelector("#f-phone").value.trim();
-        const phoneRegex =
-          /^(\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
-        const btn = form.querySelector('[type="submit"]');
-
-        if (!phoneRegex.test(phone)) {
-          showMsg("Введите корректный номер телефона", "error");
-          return;
-        }
-
-        btn.disabled = true;
-        btn.textContent = "Отправляем...";
-
-        const payload = {
-          name: form.querySelector("#f-name").value.trim(),
-          phone,
-          service: form.querySelector("#f-service").value.trim(),
-          message: form.querySelector("#f-message").value.trim(),
-          page: window.location.href,
-          form: "contactForm",
-          createdAt: new Date().toISOString(),
-        };
-
-        try {
-          const response = await fetch(leadEndpoint, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-
-          if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-          const data = await response.json();
-          if (!data || data.ok !== true)
-            throw new Error(data?.error || "send_failed");
-
-          showMsg("Заявка принята! Перезвоним в течение 5 минут.", "success");
-          form.reset();
-        } catch {
-          showMsg(
-            "Ошибка. Позвоните нам напрямую: +7 (921) 948-81-72",
-            "error",
-          );
-        } finally {
-          btn.disabled = false;
-          btn.textContent = "Отправить заявку — перезвоним за 5 минут";
-        }
-      });
-
-      function showMsg(text, type) {
-        const prev = form.querySelector(".form-msg");
-        if (prev) prev.remove();
-
-        const el = document.createElement("p");
-        el.className = "form-msg";
-        el.textContent = text;
-        el.style.cssText = [
-          "padding:12px 16px",
-          "font-size:.85rem",
-          "font-weight:700",
-          "text-align:center",
-          type === "success"
-            ? "border:2px solid #FFE135;background:rgba(255,225,53,.12);color:#FFE135"
-            : "border:2px solid #ff4444;background:rgba(255,68,68,.1);color:#ff6666",
-        ].join(";");
-
-        form.appendChild(el);
-        setTimeout(() => el.remove(), 5000);
-      }
-
-      if ("IntersectionObserver" in window) {
-        const style = document.createElement("style");
-        style.textContent =
-          ".js-fade{opacity:0;transform:translateY(22px);transition:opacity .45s ease,transform .45s ease}.js-fade.in{opacity:1;transform:none}";
-        document.head.appendChild(style);
-
-        const obs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("in");
-                obs.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.07 },
-        );
-
-        document
-          .querySelectorAll(
-            ".pricing-table,.problems,.lock-types,.districts,.why-us,#reviews,.faq-section,.seo-block,.contact",
-          )
-          .forEach((s) => {
-            s.classList.add("js-fade");
-            obs.observe(s);
-          });
-      }
-    </script>
+    <script src="assets/js/main.js?v=20260316001"></script>
   </body>
 </html>

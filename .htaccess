@@ -1,4 +1,20 @@
-# Emergency-safe .htaccess (minimal directives to avoid 500)
+# SEO 301 редиректы для дублирующихся страниц (консолидация)
+# Кластер: Замена замков
+Redirect 301 /service/zamena/zamena-zamka-vhodnoy-dveri.html /service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/zamena/zamena-dvernyh-zamkov.html /service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/zamena/zamena-zamkov-spb.html /service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/master-zamene-dvernyh.html /service/zamena/zamena-zamka-dveri.html
+
+# Кластер: Вскрытие замков
+Redirect 301 /service/vskrytie/vskrytie-zamkov-kvartire.html /service/vskrytie/avariynoe-vskrytie-zamkov.html
+Redirect 301 /service/vyzvat-mastera-vskrytiyu.html /service/vskrytie/avariynoe-vskrytie-zamkov.html
+Redirect 301 /service/sluzhba-vskrytiyu-zamkov.html /service/vskrytie/avariynoe-vskrytie-zamkov.html
+
+# Кластер: Ремонт замков
+Redirect 301 /service/remont/remont-zamka-vhodnoy.html /service/remont/remont-zamkov-dvernyh.html
+Redirect 301 /service/remont/masterskaya-remontu-zamkov.html /service/remont/remont-zamkov-dvernyh.html
+
+# Старые редиректы
 Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html /service/zamena/zamena-zamka-vhodnoy-dveri.html
 
 # Защита от clickjacking - запрет на отображения сайта в iframe
