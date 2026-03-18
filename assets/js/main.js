@@ -66,7 +66,6 @@ async function loadServicesData() {
     try {
       const data = JSON.parse(inlineScript.textContent);
       if (Array.isArray(data)) {
-        console.log("Services loaded from inline data:", data.length, "items");
         return data;
       }
     } catch (e) {
@@ -153,34 +152,16 @@ function renderServiceCard(item, index, mode) {
 }
 
 function renderServicesFromData(servicesData) {
-  console.log(
-    "renderServicesFromData called with:",
-    servicesData.length,
-    "items",
-  );
-
   const indexContainer = document.getElementById("indexServicesCards");
   const catalogContainer = document.getElementById("servicesCards");
-
-  console.log("indexServicesCards container:", indexContainer);
-  console.log("servicesCards container:", catalogContainer);
 
   const featured = servicesData.filter((item) => item.featured).slice(0, 6);
   const allItems = servicesData.filter((item) => item.pagePath);
 
-  console.log("Featured items:", featured.length);
-
   if (indexContainer) {
-    const html = featured
+    indexContainer.innerHTML = featured
       .map((item, index) => renderServiceCard(item, index, "catalog"))
       .join("");
-    console.log(
-      "Rendering HTML to indexServicesCards:",
-      html.substring(0, 100) + "...",
-    );
-    indexContainer.innerHTML = html;
-  } else {
-    console.warn("indexServicesCards container not found!");
   }
 
   if (catalogContainer) {
@@ -381,18 +362,15 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 async function initPrices() {
-  console.log("initPrices() called");
   try {
     await loadPrices();
   } catch (e) {
     console.warn("loadPrices failed, continuing without prices:", e);
   }
   const servicesData = await loadServicesData();
-  console.log("initPrices: servicesData loaded:", servicesData.length, "items");
   renderServicesFromData(servicesData);
   applyServicePrices();
   initServicesFilter();
-  console.log("initPrices() completed");
 }
 
 initPrices();

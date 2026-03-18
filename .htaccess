@@ -1,28 +1,29 @@
-# Принудительный редирект с HTTP на HTTPS
+# Принудительный редирект на канонический HTTPS-хост
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} !^zamok-i\.ru$ [NC]
+    RewriteRule ^ https://zamok-i.ru%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 # SEO 301 редиректы для дублирующихся страниц (консолидация)
 # Кластер: Замена замков
-Redirect 301 /service/zamena/zamena-zamka-vhodnoy-dveri.html /service/zamena/zamena-zamka-dveri.html
-Redirect 301 /service/zamena/zamena-dvernyh-zamkov.html /service/zamena/zamena-zamka-dveri.html
-Redirect 301 /service/zamena/zamena-zamkov-spb.html /service/zamena/zamena-zamka-dveri.html
-Redirect 301 /service/master-zamene-dvernyh.html /service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/zamena/zamena-zamka-vhodnoy-dveri.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/zamena/zamena-dvernyh-zamkov.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/zamena/zamena-zamkov-spb.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/master-zamene-dvernyh.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
 
 # Кластер: Вскрытие замков
-Redirect 301 /service/vskrytie/vskrytie-zamkov-kvartire.html /service/vskrytie/avariynoe-vskrytie-zamkov.html
-Redirect 301 /service/vyzvat-mastera-vskrytiyu.html /service/vskrytie/avariynoe-vskrytie-zamkov.html
-Redirect 301 /service/sluzhba-vskrytiyu-zamkov.html /service/vskrytie/avariynoe-vskrytie-zamkov.html
+Redirect 301 /service/vskrytie/vskrytie-zamkov-kvartire.html https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html
+Redirect 301 /service/vyzvat-mastera-vskrytiyu.html https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html
+Redirect 301 /service/sluzhba-vskrytiyu-zamkov.html https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html
 
 # Кластер: Ремонт замков
-Redirect 301 /service/remont/remont-zamka-vhodnoy.html /service/remont/remont-zamkov-dvernyh.html
-Redirect 301 /service/remont/masterskaya-remontu-zamkov.html /service/remont/remont-zamkov-dvernyh.html
+Redirect 301 /service/remont/remont-zamka-vhodnoy.html https://zamok-i.ru/service/remont/remont-zamkov-dvernyh.html
+Redirect 301 /service/remont/masterskaya-remontu-zamkov.html https://zamok-i.ru/service/remont/remont-zamkov-dvernyh.html
 
 # Старые редиректы
-Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html /service/zamena/zamena-zamka-vhodnoy-dveri.html
+Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
 
 # Защита от clickjacking - запрет на отображения сайта в iframe
 <IfModule mod_headers.c>
@@ -34,4 +35,14 @@ Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html /service/zamena/zamena-
     Header always set X-Content-Type-Options "nosniff"
     # HSTS - принудительное использование HTTPS (1 год)
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # Явно дублируем CSP и базовые security headers на статике,
+    # чтобы хостинг не отдавал css/js/webp без этих заголовков.
+    <FilesMatch "\.(?:css|js|mjs|json|xml|svg|gif|png|jpe?g|webp|ico|woff2?|ttf)$">
+        Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+        Header always set X-Frame-Options "SAMEORIGIN"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    </FilesMatch>
 </IfModule>
