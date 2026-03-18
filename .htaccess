@@ -1,3 +1,10 @@
+# Принудительный редирект с HTTP на HTTPS
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
 # SEO 301 редиректы для дублирующихся страниц (консолидация)
 # Кластер: Замена замков
 Redirect 301 /service/zamena/zamena-zamka-vhodnoy-dveri.html /service/zamena/zamena-zamka-dveri.html

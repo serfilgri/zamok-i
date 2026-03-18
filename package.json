@@ -21,7 +21,8 @@
     "deploy:mark": "bash scripts/mark-deployed.sh",
     "build": "npm run build:css && npm run build:pages",
     "watch": "npm-run-all --parallel watch:css watch:pages",
-    "cleanup:duplicates": "node scripts/cleanup-duplicates.js"
+    "cleanup:duplicates": "node scripts/cleanup-duplicates.js",
+    "check:http": "node scripts/check-http-links.js"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.13",
