@@ -67,12 +67,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/service/sluzhba-vskrytiyu-zamkov.html</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://zamok-i.ru/service/ustanovka/ustanovka-dvernyh-ruchek.html</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -110,12 +104,6 @@
   </url>
   <url>
     <loc>https://zamok-i.ru/service/vskrytie/vskrytie-zamkov-mashiny.html</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://zamok-i.ru/service/vyzvat-mastera-vskrytiyu.html</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
