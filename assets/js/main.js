@@ -246,13 +246,65 @@ document.querySelectorAll(".faq__question").forEach((btn) => {
     if (!item) return;
 
     const isOpen = item.classList.contains("open");
-    document
-      .querySelectorAll(".faq__item")
-      .forEach((i) => i.classList.remove("open"));
+    document.querySelectorAll(".faq__item").forEach((i) => {
+      i.classList.remove("open");
+      const question = i.querySelector(".faq__question");
+      if (question) question.setAttribute("aria-expanded", "false");
+    });
 
-    if (!isOpen) item.classList.add("open");
+    if (!isOpen) {
+      item.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    }
   });
 });
+
+function initReviewsToggle() {
+  const reviewsToggle = document.getElementById("reviewsToggle");
+  const reviewItems = Array.from(document.querySelectorAll("[data-review-item]"));
+  const hiddenReviewsCount = Math.max(reviewItems.length - 6, 0);
+
+  if (!reviewsToggle || hiddenReviewsCount === 0) return;
+
+  const collapsedLabel = `Показать ещё ${hiddenReviewsCount} историй`;
+  reviewsToggle.textContent = collapsedLabel;
+
+  reviewsToggle.addEventListener("click", () => {
+    const expanded = reviewsToggle.getAttribute("aria-expanded") === "true";
+
+    reviewItems.forEach((item, index) => {
+      if (index >= 6) item.hidden = expanded;
+    });
+
+    reviewsToggle.setAttribute("aria-expanded", String(!expanded));
+    reviewsToggle.textContent = expanded ? collapsedLabel : "Свернуть отзывы";
+  });
+}
+
+function initSeoBlockToggle() {
+  const content = document.getElementById("seoBlockContent");
+  const toggle = document.getElementById("seoBlockToggle");
+  if (!content || !toggle) return;
+
+  const applyState = (expanded) => {
+    content.classList.toggle("is-expanded", expanded);
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.textContent = expanded ? "Свернуть текст" : "Показать полностью";
+  };
+
+  applyState(false);
+
+  if (content.scrollHeight <= content.clientHeight + 8) {
+    applyState(true);
+    toggle.hidden = true;
+    return;
+  }
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    applyState(!expanded);
+  });
+}
 
 /* ---- Scroll to top ---- */
 const scrollTop = document.getElementById("scrollTop");
@@ -357,9 +409,21 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (!target) return;
 
     e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const navbar = document.getElementById("navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+    const top =
+      target.getBoundingClientRect().top + window.scrollY - navbarHeight - 8;
+
+    window.scrollTo({ top, behavior: "smooth" });
   });
 });
+
+function initIndexContactForm() {
+  const form = document.getElementById("contactForm");
+  if (!form || form.hasAttribute("onsubmit")) return;
+
+  form.addEventListener("submit", handleForm);
+}
 
 async function initPrices() {
   try {
@@ -373,4 +437,7 @@ async function initPrices() {
   initServicesFilter();
 }
 
+initReviewsToggle();
+initSeoBlockToggle();
+initIndexContactForm();
 initPrices();

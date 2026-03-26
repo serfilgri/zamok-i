@@ -9,3 +9,5 @@ _pgbackup/
 _pginfo/
 .DS_Store
 hosting-deploy-*.zip
+__pycache__/
+*.py[cod]
