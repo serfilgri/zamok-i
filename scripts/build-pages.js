@@ -156,6 +156,7 @@ function getVersion() {
  */
 function buildServicePage(item) {
   const { pagePath, title, description, category } = item;
+  const relPath = getRelativePath(pagePath);
 
   // Определяем тип секции по категории
   const sectionMap = {

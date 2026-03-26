@@ -1,140 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Основные страницы -->
   <url>
     <loc>https://zamok-i.ru/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://zamok-i.ru/about.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/services.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://zamok-i.ru/pricing.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://zamok-i.ru/process.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://zamok-i.ru/contact.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zamok-i.ru/faq.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- Услуги: Вскрытие замков (основные) -->
   <url>
-    <loc>https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zamok-i.ru/offer.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/service/vskrytie/vskrytie-zamkov-mashiny.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Услуги: Замена замков (основные) -->
-  <url>
-    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zamok-i.ru/policy.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/service/zamena/zamena-cilindrovogo-zamka.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <loc>https://zamok-i.ru/pricing.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/service/zamena/zamena-suvaldnogo-zamka.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <loc>https://zamok-i.ru/process.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-posle-vzloma.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <loc>https://zamok-i.ru/service/remont/masterskaya-remontu-zamkov.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/service/zamena/nochnaya-zamena-zamka.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <loc>https://zamok-i.ru/service/remont/remont-zamka-vhodnoy.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
-
-  <!-- Услуги: Ремонт замков (основные) -->
   <url>
     <loc>https://zamok-i.ru/service/remont/remont-zamkov-dvernyh.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Услуги: Установка замков -->
   <url>
-    <loc>https://zamok-i.ru/service/ustanovka/ustanovka-zamkov-zamkov.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <loc>https://zamok-i.ru/service/sluzhba-vskrytiyu-zamkov.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/ustanovka/ustanovka-dvernyh-ruchek.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zamok-i.ru/service/ustanovka/ustanovka-zamka-mezhkomnatnuyu.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/ustanovka/ustanovka-zamkov-zamkov.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zamok-i.ru/service/ustanovka/vrezka-zamka-mezhkomnatnuyu.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/service/ustanovka/ustanovka-dvernyh-ruchek.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <loc>https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Юридические страницы -->
-  <url>
-    <loc>https://zamok-i.ru/policy.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zamok-i.ru/offer.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://zamok-i.ru/service/vskrytie/vskrytie-zamkov-kvartire.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/vskrytie/vskrytie-zamkov-mashiny.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/vyzvat-mastera-vskrytiyu.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/nochnaya-zamena-zamka.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-cilindrovogo-zamka.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-dvernyh-zamkov.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-suvaldnogo-zamka.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-posle-vzloma.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-vhodnoy-dveri.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamkov-spb.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/services.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

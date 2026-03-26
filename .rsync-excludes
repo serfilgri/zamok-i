@@ -1,5 +1,6 @@
 _pgbackup/
 _pginfo/
+includes/
 node_modules/
 .git/
 .idea/
@@ -16,4 +17,6 @@ package-lock.json
 pinegrow.json
 assets/images/source/
 *.backup-*.html
+landing-master.html
+test-include.html
 hosting-deploy-*.zip
