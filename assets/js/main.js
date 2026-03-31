@@ -164,7 +164,9 @@ function renderServicesFromData(servicesData) {
       .join("");
   }
 
-  if (catalogContainer) {
+  // Keep SEO-friendly static cards in services.html intact.
+  // If the container is already filled in HTML, do not replace it with fetched JSON.
+  if (catalogContainer && !catalogContainer.children.length) {
     catalogContainer.innerHTML = allItems
       .map((item, index) => renderServiceCard(item, index, "catalog"))
       .join("");

@@ -51,8 +51,12 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" />
+    </noscript>
     <link
       rel="preload"
       href="assets/css/styles.css"
@@ -1042,6 +1046,49 @@
               >
             </div>
           </article>
+          <article class="service-card" data-category="installation">
+            <span class="service-card__num">20</span>
+            <span class="material-symbols-outlined service-card__icon"
+              >tune</span
+            >
+            <h3>Замена личинки замка</h3>
+            <p>
+              Замена только цилиндра без полной замены корпуса замка с подбором
+              совместимого размера и нового комплекта ключей.
+            </p>
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                flex-wrap: wrap;
+              "
+            >
+              <a
+                href="/service/zamena/zamena-lichinki-zamka.html"
+                class="btn btn--white"
+                style="
+                  padding: 11px 20px;
+                  font-size: 0.8rem;
+                  box-shadow: 3px 3px 0 var(--black);
+                "
+                >Подробнее</a
+              >
+              <strong
+                style="
+                  margin-left: auto;
+                  background: var(--primary);
+                  border: 2px solid var(--black);
+                  padding: 8px 12px;
+                  font-size: 0.9rem;
+                  line-height: 1;
+                "
+                >от 1 800 ₽</strong
+              >
+            </div>
+          </article>
         </div>
 
         <div class="about__content" style="margin-top: 36px">
@@ -1219,6 +1266,6 @@
         }
       }
     </script>
-    <script src="assets/js/main.js?v=20260318001"></script>
+    <script src="assets/js/main.js?v=20260328002"></script>
   </body>
 </html>

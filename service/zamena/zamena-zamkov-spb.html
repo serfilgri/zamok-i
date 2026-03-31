@@ -54,8 +54,12 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" />
+    </noscript>
     <link rel="preload" href="../../assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link href="../../assets/css/styles.css" rel="stylesheet" /></noscript>
       <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
@@ -325,7 +329,7 @@
                 <td>Корпус исправен, требуется заменить только цилиндр</td>
                 <td class="price-val">Замена личинки/цилиндра</td>
                 <td>
-                  <a href="/service/zamena/zamena-zamka-dveri.html"
+                  <a href="/service/zamena/zamena-lichinki-zamka.html"
                     >Страница услуги</a
                   >
                 </td>
@@ -655,7 +659,7 @@
             <ul class="footer__links">
               <li><a href="/service/vskrytie/avariynoe-vskrytie-zamkov.html">Вскрытие замков</a></li>
               <li><a href="/service/zamena/zamena-zamka-dveri.html">Замена замков</a></li>
-              <li><a href="/service/zamena/zamena-cilindrovogo-zamka.html">Замена личинки</a></li>
+              <li><a href="/service/zamena/zamena-lichinki-zamka.html">Замена личинки</a></li>
               <li><a href="/service/remont/remont-zamkov-dvernyh.html">Ремонт замков</a></li>
               <li><a href="/services.html">Все услуги</a></li>
             </ul>

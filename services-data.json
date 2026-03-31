@@ -60,6 +60,16 @@
     "featured": false
   },
   {
+    "id": "replace-lock-cylinder-core",
+    "title": "Замена личинки замка",
+    "description": "Замена только цилиндра без полной замены корпуса замка с подбором совместимого размера.",
+    "category": "installation",
+    "icon": "tune",
+    "pagePath": "service/zamena/zamena-lichinki-zamka.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
     "id": "night-lock-replacement",
     "title": "Ночная замена замка",
     "description": "Ночная замена замка с выездом мастера в вечернее и ночное время по Санкт-Петербургу.",

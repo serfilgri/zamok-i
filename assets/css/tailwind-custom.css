@@ -90,6 +90,7 @@
 
       .tag {
         display: inline-block;
+        width: fit-content;
         background: var(--primary);
         border: var(--border);
         padding: 4px 12px;
@@ -97,6 +98,55 @@
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.1em;
+      }
+
+      .breadcrumb {
+        background: var(--white);
+      }
+
+      .breadcrumb__list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 18px 0;
+        font-size: 0.85rem;
+        font-weight: 800;
+        line-height: 1.5;
+      }
+
+      .breadcrumb__list li {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+      }
+
+      .breadcrumb__list li + li::before {
+        content: "/";
+        color: #666;
+        font-weight: 900;
+      }
+
+      .breadcrumb__list a {
+        color: #444;
+        transition: color 0.15s ease;
+      }
+
+      .breadcrumb__list a:hover {
+        color: var(--black);
+      }
+
+      .breadcrumb__list li[aria-current="page"] {
+        color: var(--black);
+      }
+
+      @media (max-width: 768px) {
+        .breadcrumb__list {
+          padding: 14px 0;
+          font-size: 0.78rem;
+        }
       }
 
       /* ============================================================
@@ -1086,7 +1136,7 @@
          CTA BANNER
       ============================================================ */
       .cta-banner {
-        background: var(--primary);
+        background: var(--white);
         border-bottom: 4px solid var(--black);
         padding: 80px 0;
       }

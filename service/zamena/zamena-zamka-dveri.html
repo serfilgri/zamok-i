@@ -57,8 +57,12 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght;600;700;900&amp;display=swap" />
+    </noscript>
     <link
       rel="preload"
       href="../../assets/css/styles.css"
@@ -326,9 +330,9 @@
               </tr>
               <tr>
                 <td>Нужна замена только цилиндра без замены корпуса</td>
-                <td class="price-val">Замена цилиндрового замка</td>
+                <td class="price-val">Замена личинки замка</td>
                 <td>
-                  <a href="/service/zamena/zamena-cilindrovogo-zamka.html"
+                  <a href="/service/zamena/zamena-lichinki-zamka.html"
                     >Страница услуги</a
                   >
                 </td>
@@ -732,11 +736,11 @@
             <span class="material-symbols-outlined service-card__icon"
               >tune</span
             >
-            <h3>Замена цилиндрового замка</h3>
+            <h3>Замена личинки замка</h3>
             <p>Замена личинки замка за 20 минут. Все классы секретности.</p>
             <a
               class="service-card__link"
-              href="/service/zamena/zamena-cilindrovogo-zamka.html"
+              href="/service/zamena/zamena-lichinki-zamka.html"
             >
               Подробнее
               <span class="material-symbols-outlined">arrow_forward</span>
@@ -805,7 +809,7 @@
                 >
               </li>
               <li>
-                <a href="/service/zamena/zamena-cilindrovogo-zamka.html"
+                <a href="/service/zamena/zamena-lichinki-zamka.html"
                   >Замена личинки</a
                 >
               </li>
