@@ -264,6 +264,10 @@ a {
 .service-landing .hero.hero--wide .hero__title {
   font-size: clamp(2.35rem, 4.8vw, 4.2rem);
 }
+.service-landing .section-title {
+  font-size: clamp(1.95rem, 4vw, 3.35rem);
+  line-height: 1.02;
+}
 .hero__title .highlight {
   background: var(--black);
   color: var(--primary);
