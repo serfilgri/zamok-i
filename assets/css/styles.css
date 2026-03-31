@@ -24,6 +24,7 @@ body {
   background-color: var(--white);
   color: var(--black);
   overflow-x: hidden;
+  line-height: 1.5;
 }
 img {
   max-width: 100%;
@@ -242,6 +243,8 @@ a {
   letter-spacing: 0.15em;
   font-size: 0.75rem;
   font-weight: 900;
+  line-height: 1.2;
+  display: block;
 }
 .hero__title {
   letter-spacing: -0.04em;
@@ -273,6 +276,7 @@ a {
   font-size: 1.1rem;
   font-weight: 800;
   line-height: 1.4;
+  text-wrap: pretty;
 }
 .hero__buttons {
   flex-wrap: wrap;
@@ -326,6 +330,7 @@ a {
   padding: 10px 16px;
   font-weight: 900;
   display: inline-flex;
+  line-height: 1;
 }
 .hero__price-badge .from {
   color: #666;
@@ -347,12 +352,13 @@ a {
   display: grid;
 }
 .hero__trust-item {
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-size: 0.85rem;
   font-weight: 800;
   line-height: 1.4;
   display: flex;
+  min-height: 2.5rem;
 }
 .hero__trust-item .material-symbols-outlined {
   flex-shrink: 0;

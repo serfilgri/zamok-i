@@ -28,6 +28,7 @@
         background-color: var(--white);
         color: var(--black);
         overflow-x: hidden;
+        line-height: 1.5;
       }
 
       img {
@@ -341,6 +342,8 @@
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0.15em;
+        line-height: 1.2;
+        display: block;
       }
 
       .hero__title {
@@ -376,6 +379,7 @@
         text-transform: uppercase;
         margin-bottom: 40px;
         color: #333;
+        text-wrap: pretty;
       }
 
       .hero__buttons {
@@ -437,6 +441,7 @@
         box-shadow: var(--shadow);
         font-weight: 900;
         text-transform: uppercase;
+        line-height: 1;
       }
 
       .hero__price-badge .from {
@@ -464,11 +469,12 @@
 
       .hero__trust-item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
         font-size: 0.85rem;
         font-weight: 800;
         line-height: 1.4;
+        min-height: 2.5rem;
       }
 
       .hero__trust-item .material-symbols-outlined {
