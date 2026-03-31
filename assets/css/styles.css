@@ -13,8 +13,7 @@
   --shadow: 6px 6px 0px var(--black);
   --radius: 0px;
   --font:
-    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 html {
   scroll-behavior: smooth;

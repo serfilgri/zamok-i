@@ -26,37 +26,6 @@ function getSiteRootPrefix() {
   return src.replace(/assets\/js\/main\.js(?:\?.*)?$/, "");
 }
 
-function applyLoadedPrices(loadedPrices) {
-  for (const [serviceId, price] of Object.entries(loadedPrices)) {
-    if (!Object.prototype.hasOwnProperty.call(SERVICE_PRICES, serviceId))
-      continue;
-
-    const parsedPrice = Number(price);
-    if (!Number.isFinite(parsedPrice) || parsedPrice <= 0) continue;
-
-    SERVICE_PRICES[serviceId] = parsedPrice;
-  }
-}
-
-async function loadPrices() {
-  const rootPrefix = getSiteRootPrefix();
-
-  try {
-    const response = await fetch(`${rootPrefix}prices.json`, {
-      cache: "no-store",
-    });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-    const loadedPrices = await response.json();
-    applyLoadedPrices(loadedPrices);
-  } catch (error) {
-    console.warn(
-      "prices.json is unavailable, fallback prices are used:",
-      error,
-    );
-  }
-}
-
 async function loadServicesData() {
   const rootPrefix = getSiteRootPrefix();
 
@@ -428,18 +397,46 @@ function initIndexContactForm() {
 }
 
 async function initPrices() {
-  try {
-    await loadPrices();
-  } catch (e) {
-    console.warn("loadPrices failed, continuing without prices:", e);
-  }
   const servicesData = await loadServicesData();
   renderServicesFromData(servicesData);
   applyServicePrices();
   initServicesFilter();
 }
 
+function scheduleNonCriticalInit(task) {
+  if (document.readyState === "complete") {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(() => {
+        void task();
+      });
+      return;
+    }
+
+    window.setTimeout(() => {
+      void task();
+    }, 0);
+    return;
+  }
+
+  window.addEventListener(
+    "load",
+    () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(() => {
+          void task();
+        });
+        return;
+      }
+
+      window.setTimeout(() => {
+        void task();
+      }, 0);
+    },
+    { once: true },
+  );
+}
+
 initReviewsToggle();
 initSeoBlockToggle();
 initIndexContactForm();
-initPrices();
+scheduleNonCriticalInit(initPrices);
