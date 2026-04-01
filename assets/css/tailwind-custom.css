@@ -91,7 +91,7 @@
 
       .tag {
         display: inline-block;
-        width: fit-content;
+        align-self: flex-start;
         background: var(--primary);
         border: var(--border);
         padding: 4px 12px;
@@ -397,7 +397,7 @@
         text-transform: uppercase;
         margin-bottom: 40px;
         color: #333;
-        text-wrap: pretty;
+        overflow-wrap: break-word;
       }
 
       .hero__buttons {
@@ -675,7 +675,10 @@
       .service-card::before {
         content: "";
         position: absolute;
-        inset: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         background: var(--primary);
         transform: translateY(100%);
         transition: transform 0.25s ease;
@@ -1588,16 +1591,17 @@
         cursor: pointer;
         z-index: 99;
         opacity: 0;
-        pointer-events: none;
+        visibility: hidden;
         transition:
           opacity 0.2s,
+          visibility 0.2s,
           box-shadow 0.15s,
           transform 0.15s;
       }
 
       .scroll-top.visible {
         opacity: 1;
-        pointer-events: all;
+        visibility: visible;
       }
 
       .scroll-top:hover {
@@ -1682,9 +1686,9 @@
 
       .pricing-table__note {
         display: inline-flex;
+        align-self: flex-start;
         align-items: center;
         gap: 10px;
-        width: fit-content;
         max-width: 100%;
         background: var(--primary);
         border: var(--border);
@@ -1853,8 +1857,8 @@
 
       .lock-card__price {
         display: inline-flex;
+        align-self: flex-start;
         align-items: center;
-        width: fit-content;
         margin-top: auto;
         background: var(--black);
         color: var(--primary);
@@ -2042,7 +2046,6 @@
           rgba(255, 255, 255, 0),
           #fff 70%
         );
-        pointer-events: none;
       }
 
       .seo-block__content.is-expanded {

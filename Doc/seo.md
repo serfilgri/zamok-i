@@ -1,5 +1,17 @@
 # План SEO-оптимизации сайта ЗАМОК-24
 
+## Быстрая шпаргалка по коммитам
+
+```bash
+git status
+git add index.html assets/css/tailwind-custom.css assets/css/styles.css
+git commit -m "fix: обновил SEO и главную страницу"
+git push
+```
+
+Подробная памятка:
+[Doc/how-to-commit.md](/Users/serfil/Desktop/my-project/AGENCY-WEBSITE/Doc/how-to-commit.md)
+
 
 
 
