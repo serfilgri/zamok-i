@@ -48,6 +48,10 @@ if (mb_strlen($phone) < 6) {
 }
 
 $host = $_SERVER["HTTP_HOST"] ?? "zamok-i.ru";
+$hostOnly = preg_replace('/:\d+$/', '', $host) ?? $host;
+$isLocalHost = $hostOnly === "localhost"
+  || $hostOnly === "127.0.0.1"
+  || str_ends_with($hostOnly, ".local");
 $to = "info@zamok-i.ru";
 $subject = "Новая заявка с сайта zamok-i";
 
@@ -74,8 +78,17 @@ $lines[] = "User-Agent: " . clean_text($_SERVER["HTTP_USER_AGENT"] ?? "", 500);
 
 $message = implode("\n", $lines);
 
+if ($isLocalHost) {
+  echo json_encode([
+    "ok" => true,
+    "warning" => "mail_disabled_in_local_environment",
+  ], JSON_UNESCAPED_UNICODE);
+  exit;
+}
+
+// In production we keep real e-mail delivery.
 $encodedSubject = "=?UTF-8?B?" . base64_encode($subject) . "?=";
-$from = "no-reply@" . preg_replace('/:\d+$/', '', $host);
+$from = "no-reply@" . $hostOnly;
 $headers = [
   "MIME-Version: 1.0",
   "Content-Type: text/plain; charset=UTF-8",
@@ -84,7 +97,6 @@ $headers = [
 ];
 
 $sent = @mail($to, $encodedSubject, $message, implode("\r\n", $headers));
-
 if (!$sent) {
   http_response_code(500);
   echo json_encode(["ok" => false, "error" => "mail_send_failed"], JSON_UNESCAPED_UNICODE);

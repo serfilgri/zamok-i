@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /.tools/
+Disallow: /node_modules/
+Disallow: /_pgbackup/
+Disallow: /_pginfo/
 
 Sitemap: https://zamok-i.ru/sitemap.xml
