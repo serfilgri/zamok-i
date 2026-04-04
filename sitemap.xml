@@ -133,6 +133,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://zamok-i.ru/service/zamena/skolko-stoit-zamenit-zamok.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/srochnaya-zamena-zamka-v-den-obrashcheniya.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://zamok-i.ru/service/zamena/zamena-cilindrovogo-zamka.html</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -151,6 +163,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-bez-povrezhdeniya-dveri.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://zamok-i.ru/service/zamena/zamena-zamka-dveri-raiony-spb.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -163,8 +181,50 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-i-ustanovka-novogo.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://zamok-i.ru/service/zamena/zamena-zamka-posle-vzloma.html</loc>
     <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-pri-potere-klyuchey.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-s-garantiey.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-s-vyezdom-15-minut.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-v-chastnom-dome.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-v-metallicheskoy-dveri.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zamok-i.ru/service/zamena/zamena-zamka-v-ofise.html</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
