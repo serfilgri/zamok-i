@@ -6,6 +6,13 @@
     RewriteRule ^ https://zamok-i.ru%{REQUEST_URI} [R=301,L]
 </IfModule>
 
+# Явные MIME-типы для корректного Content-Type
+AddType text/html .html .htm
+AddType application/json .json
+AddType application/xml .xml
+AddType application/manifest+json .webmanifest
+AddType image/svg+xml .svg .svgz
+
 # SEO 301 редиректы для дублирующихся страниц (консолидация)
 # Кластер: Замена замков
 Redirect 301 /service/zamena/zamena-zamka-vhodnoy-dveri.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
