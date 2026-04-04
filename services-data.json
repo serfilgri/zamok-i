@@ -208,5 +208,105 @@
     "pagePath": "service/ustanovka/vrezka-zamka-mezhkomnatnuyu.html",
     "priceId": "interroom_mortise",
     "featured": false
+  },
+  {
+    "id": "replace-lock-no-door-damage",
+    "title": "Замена замка без повреждения двери",
+    "description": "Аккуратная замена замка без повреждения двери с сохранением отделки и фурнитуры.",
+    "category": "installation",
+    "icon": "lock_open",
+    "pagePath": "service/zamena/zamena-zamka-bez-povrezhdeniya-dveri.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-metal-door",
+    "title": "Замена замка в металлической двери",
+    "description": "Замена замка в металлической двери с точной настройкой ригелей и плавным ходом.",
+    "category": "installation",
+    "icon": "door_front",
+    "pagePath": "service/zamena/zamena-zamka-v-metallicheskoy-dveri.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-15-min",
+    "title": "Замена замка с выездом за 15 минут",
+    "description": "Приоритетный срочный выезд мастера и замена замка с быстрым восстановлением безопасности.",
+    "category": "installation",
+    "icon": "bolt",
+    "pagePath": "service/zamena/zamena-zamka-s-vyezdom-15-minut.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-lost-keys",
+    "title": "Замена замка при потере ключей",
+    "description": "Срочная замена замка при потере ключей с новым комплектом и проверкой механизма.",
+    "category": "installation",
+    "icon": "key",
+    "pagePath": "service/zamena/zamena-zamka-pri-potere-klyuchey.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-with-warranty",
+    "title": "Замена замка с гарантией",
+    "description": "Замена замка с гарантией на выполненные работы и прозрачной стоимостью до начала.",
+    "category": "installation",
+    "icon": "verified",
+    "pagePath": "service/zamena/zamena-zamka-s-garantiey.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-install-new",
+    "title": "Замена замка и установка нового",
+    "description": "Демонтаж старого замка и установка нового механизма под ключ за один выезд.",
+    "category": "installation",
+    "icon": "build",
+    "pagePath": "service/zamena/zamena-zamka-i-ustanovka-novogo.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-price",
+    "title": "Сколько стоит заменить замок",
+    "description": "Страница с актуальными диапазонами цен и факторами, влияющими на стоимость замены.",
+    "category": "installation",
+    "icon": "payments",
+    "pagePath": "service/zamena/skolko-stoit-zamenit-zamok.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-office",
+    "title": "Замена замка в офисе",
+    "description": "Замена замка в офисе в удобное время без срыва рабочего процесса компании.",
+    "category": "installation",
+    "icon": "apartment",
+    "pagePath": "service/zamena/zamena-zamka-v-ofise.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-private-house",
+    "title": "Замена замка в частном доме",
+    "description": "Замена замка в частном доме в СПб и ЛО с учетом условий уличной эксплуатации.",
+    "category": "installation",
+    "icon": "home",
+    "pagePath": "service/zamena/zamena-zamka-v-chastnom-dome.html",
+    "priceId": "lock_replacement",
+    "featured": false
+  },
+  {
+    "id": "replace-lock-same-day",
+    "title": "Срочная замена замка в день обращения",
+    "description": "Срочная замена замка в день обращения с быстрым выездом мастера по Санкт-Петербургу.",
+    "category": "installation",
+    "icon": "speed",
+    "pagePath": "service/zamena/srochnaya-zamena-zamka-v-den-obrashcheniya.html",
+    "priceId": "lock_replacement",
+    "featured": false
   }
 ]
