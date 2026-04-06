@@ -6,6 +6,7 @@
     "watch:css": "tailwindcss -i ./assets/css/tailwind-custom.css -o ./assets/css/styles.css --watch",
     "build:pages": "node scripts/build-pages.js",
     "build:sitemap": "node scripts/generate-sitemap.js",
+    "sync:pages": "node scripts/sync-pages.js",
     "watch:pages": "node scripts/build-pages.js --watch",
     "sync:services": "node scripts/sync-services-pages.js",
     "watch:services": "node scripts/sync-services-pages.js --watch",
@@ -15,6 +16,9 @@
     "deploy": "bash scripts/deploy-rsync.sh",
     "deploy:dry": "bash scripts/deploy-rsync.sh --dry-run",
     "deploy:full": "bash scripts/deploy-rsync.sh --delete",
+    "deploy:ftp": "python3 scripts/deploy-ftp.py",
+    "deploy:ftp:dry": "python3 scripts/deploy-ftp.py --dry-run",
+    "deploy:ftp:full": "python3 scripts/deploy-ftp.py --full",
     "deploy:pending:list": "bash scripts/deploy-rsync.sh --pending-list",
     "deploy:pending": "bash scripts/deploy-rsync.sh --pending",
     "deploy:pending:dry": "bash scripts/deploy-rsync.sh --pending --dry-run",
@@ -23,7 +27,9 @@
     "build": "npm run build:css && npm run build:pages && npm run build:sitemap",
     "watch": "npm-run-all --parallel watch:css watch:pages",
     "cleanup:duplicates": "node scripts/cleanup-duplicates.js",
-    "check:http": "node scripts/check-http-links.js"
+    "check:http": "node scripts/check-http-links.js",
+    "seo:visibility": "python3 scripts/check-search-visibility.py",
+    "seo:visibility:sample": "python3 scripts/check-search-visibility.py --limit 10"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.13",

@@ -1,0 +1,43 @@
+{
+  "name": "pages-tracker-vscode-extension",
+  "displayName": "Pages Tracker Panel",
+  "description": "Local VS Code panel for managing pages-tracker.csv, opening pages, and running deploy tasks.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:pagesTracker.openPanel",
+    "onView:pagesTracker.panel"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pagesTracker.openPanel",
+        "title": "Pages Tracker: Open Panel"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "pagesTracker",
+          "title": "Tracker",
+          "icon": "media/tracker.svg"
+        }
+      ]
+    },
+    "views": {
+      "pagesTracker": [
+        {
+          "id": "pagesTracker.panel",
+          "name": "Pages Tracker"
+        }
+      ]
+    }
+  }
+}

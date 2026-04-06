@@ -1,0 +1,55 @@
+name: Deploy Static Site
+
+on:
+  # Run deployment automatically on every push to the production branch.
+  push:
+    branches:
+      - main
+
+# Prevent overlapping deployments to the same environment.
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository content that will be uploaded to the hosting.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Deploy only changed files using the action's sync state file.
+      # This workflow assumes the hosting supports FTP/FTPS credentials.
+      - name: Upload changed files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/
+          local-dir: ./
+          state-name: .ftp-deploy-sync-state.json
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/.vscode/**
+            **/.idea/**
+            **/.DS_Store
+            **/*.md
+            .dockerignore
+            docker-compose.yml
+            .mcp.json
+            pinegrow.json
+            package.json
+            package-lock.json
+            docker/**
+            Doc/**
+            scripts/**
+
+      # Simple success marker in the Actions log.
+      - name: Confirm deployment
+        run: echo "Deploy complete"

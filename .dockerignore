@@ -1,0 +1,9 @@
+.git
+.idea
+.vscode
+node_modules
+_pgbackup
+_pginfo
+Doc
+.DS_Store
+*.log

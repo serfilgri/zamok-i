@@ -2,12 +2,15 @@
 import argparse
 import fnmatch
 import json
+import subprocess
 from ftplib import FTP, error_perm
+from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
 ROOT = Path.cwd()
 CONFIG_PATH = ROOT / ".vscode" / "sftp.json"
 EXCLUDES_PATH = ROOT / ".rsync-excludes"
+DEPLOY_STAMP_PATH = ROOT / ".deploy.last_success"
 
 # Only delete paths we explicitly know are source-only or SEO junk.
 JUNK_PATHS = [
@@ -87,6 +90,24 @@ def collect_local_files(patterns):
             continue
         files.append(rel_path)
     return sorted(files)
+
+
+def get_deploy_stamp():
+    if not DEPLOY_STAMP_PATH.exists():
+        return None
+    return DEPLOY_STAMP_PATH.stat().st_mtime
+
+
+def build_pending_files(files, deploy_stamp):
+    if deploy_stamp is None:
+        return files
+
+    pending = []
+    for rel_path in files:
+        file_path = ROOT / rel_path
+        if file_path.stat().st_mtime > deploy_stamp:
+            pending.append(rel_path)
+    return pending
 
 
 def ftp_connect():
@@ -182,30 +203,63 @@ def cleanup_junk(ftp: FTP, dry_run: bool):
     return deleted
 
 
+def mark_deployed():
+    DEPLOY_STAMP_PATH.touch()
+    print(f"Deploy stamp updated: {DEPLOY_STAMP_PATH}")
+
+
+def sync_tracker():
+    script_path = ROOT / "scripts" / "sync-pages.js"
+    if not script_path.exists():
+        print("Tracker sync skipped: scripts/sync-pages.js not found")
+        return
+
+    subprocess.run(["node", str(script_path)], cwd=ROOT, check=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--cleanup-junk", action="store_true")
     parser.add_argument("--skip-upload", action="store_true")
+    parser.add_argument("--full", action="store_true")
     args = parser.parse_args()
 
     patterns = load_excludes()
-    files = collect_local_files(patterns)
+    all_files = collect_local_files(patterns)
+    deploy_stamp = get_deploy_stamp()
+    files = all_files if args.full else build_pending_files(all_files, deploy_stamp)
 
     ftp, remote_root = ftp_connect()
     print(f"Connected to FTP root: {remote_root}")
-    print(f"Local deployable files: {len(files)}")
+    if deploy_stamp is None:
+        print("Last successful deploy: not found, full upload will be used")
+    else:
+        stamp_text = datetime.fromtimestamp(deploy_stamp, tz=timezone.utc).astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
+        print(f"Last successful deploy: {stamp_text}")
+    print(f"Local deployable files: {len(all_files)}")
+    if args.full:
+        print(f"Upload mode: full ({len(files)} files)")
+    else:
+        print(f"Upload mode: incremental ({len(files)} changed files)")
 
     try:
         if not args.skip_upload:
-            uploaded = upload_files(ftp, files, args.dry_run)
-            print(f"Uploaded entries: {uploaded}")
+            if not files:
+                print("No changed files to upload.")
+            else:
+                uploaded = upload_files(ftp, files, args.dry_run)
+                print(f"Uploaded entries: {uploaded}")
 
         if args.cleanup_junk:
             deleted = cleanup_junk(ftp, args.dry_run)
             print(f"Cleanup entries processed: {deleted}")
     finally:
         ftp.quit()
+
+    if not args.dry_run and (files or args.cleanup_junk):
+        mark_deployed()
+        sync_tracker()
 
 
 if __name__ == "__main__":
