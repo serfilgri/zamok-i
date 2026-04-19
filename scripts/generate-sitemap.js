@@ -18,17 +18,6 @@ const EXCLUDED_PREFIXES = [
 ];
 
 const EXCLUDED_FILES = new Set(["landing-master.html", "test-include.html"]);
-const REDIRECTED_FILES = new Set([
-  "service/master-zamene-dvernyh.html",
-  "service/remont/masterskaya-remontu-zamkov.html",
-  "service/remont/remont-zamka-vhodnoy.html",
-  "service/sluzhba-vskrytiyu-zamkov.html",
-  "service/vskrytie/vskrytie-zamkov-kvartire.html",
-  "service/vyzvat-mastera-vskrytiyu.html",
-  "service/zamena/zamena-dvernyh-zamkov.html",
-  "service/zamena/zamena-zamka-vhodnoy-dveri.html",
-  "service/zamena/zamena-zamkov-spb.html",
-]);
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -45,7 +34,6 @@ function isPublicHtml(relPath) {
   if (relPath.startsWith(".")) return false;
   if (!relPath.endsWith(".html")) return false;
   if (EXCLUDED_FILES.has(relPath)) return false;
-  if (REDIRECTED_FILES.has(relPath)) return false;
   if (relPath.includes(".backup-")) return false;
   return !EXCLUDED_PREFIXES.some((prefix) => relPath.startsWith(prefix));
 }
