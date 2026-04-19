@@ -15,19 +15,21 @@ AddType image/svg+xml .svg .svgz
 
 # SEO 301 редиректы для дублирующихся страниц (консолидация)
 # Кластер: Замена замков
-Redirect 301 /service/zamena/zamena-zamka-vhodnoy-dveri.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
-Redirect 301 /service/zamena/zamena-dvernyh-zamkov.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
-Redirect 301 /service/zamena/zamena-zamkov-spb.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
-Redirect 301 /service/master-zamene-dvernyh.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
+Redirect 301 /service/zamena/zamena-zamkov-spb.html https://zamok-i.ru/service/zamena/zamena-dvernyh-zamkov.html
+Redirect 301 /service/master-zamene-dvernyh.html https://zamok-i.ru/service/zamena/zamena-dvernyh-zamkov.html
 
 # Кластер: Вскрытие замков
-Redirect 301 /service/vskrytie/vskrytie-zamkov-kvartire.html https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html
 Redirect 301 /service/vyzvat-mastera-vskrytiyu.html https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html
 Redirect 301 /service/sluzhba-vskrytiyu-zamkov.html https://zamok-i.ru/service/vskrytie/avariynoe-vskrytie-zamkov.html
 
 # Кластер: Ремонт замков
-Redirect 301 /service/remont/remont-zamka-vhodnoy.html https://zamok-i.ru/service/remont/remont-zamkov-dvernyh.html
 Redirect 301 /service/remont/masterskaya-remontu-zamkov.html https://zamok-i.ru/service/remont/remont-zamkov-dvernyh.html
+
+# Технические и backup-страницы больше не должны участвовать в индексации
+Redirect gone /landing-master.html
+Redirect gone /test-include.html
+Redirect gone /index.backup-2026-02-24.html
+Redirect gone /services.backup-2026-02-24.html
 
 # Старые редиректы
 Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html https://zamok-i.ru/service/zamena/zamena-zamka-dveri.html
