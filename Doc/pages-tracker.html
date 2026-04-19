@@ -189,6 +189,41 @@
         background: #f8f3e9;
       }
 
+      button.has-tip {
+        position: relative;
+      }
+
+      button.has-tip::after {
+        content: attr(data-tip);
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% + 10px);
+        transform: translate(-50%, 6px);
+        opacity: 0;
+        pointer-events: none;
+        width: max-content;
+        max-width: min(320px, 80vw);
+        padding: 8px 10px;
+        border: 2px solid var(--line);
+        border-radius: 10px;
+        background: #fffdf8;
+        color: var(--ink);
+        font-size: 0.76rem;
+        font-weight: 700;
+        line-height: 1.35;
+        text-transform: none;
+        letter-spacing: normal;
+        box-shadow: 4px 4px 0 var(--line);
+        z-index: 30;
+        transition: opacity 0.14s ease, transform 0.14s ease;
+      }
+
+      button.has-tip:hover::after,
+      button.has-tip:focus-visible::after {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
       .status-line {
         margin-top: 12px;
         color: var(--muted);
@@ -759,6 +794,49 @@
         statusLine.textContent = message;
       }
 
+      function applyButtonTooltips() {
+        const tipsById = {
+          openFileBtn: "Открывает любой CSV-файл через выбор файла в браузере.",
+          loadDefaultBtn: "Загружает стандартный файл Doc/pages-tracker.csv из проекта.",
+          saveBtn: "Сохраняет текущие изменения в исходный CSV (если доступно прямое сохранение).",
+          downloadBtn: "Скачивает текущую таблицу как CSV-файл на компьютер.",
+          todayBtn: "Ставит сегодняшнюю дату в поле last_reviewed у всех видимых строк.",
+          resetFiltersBtn: "Сбрасывает все фильтры и показывает все строки.",
+          openTrackerBtn: "Открывает файл Doc/pages-tracker.csv в VS Code.",
+          openTasksBtn: "Открывает файл .vscode/tasks.json в VS Code.",
+          runCommitTaskBtn: "Запускает VS Code task для git commit с вводом файлов и сообщения.",
+          copySyncBtn: "Копирует команду синхронизации страниц: npm run sync:pages.",
+          copyDeployBtn: "Копирует команду выгрузки на FTP и синхронизации трекера: npm run deploy:ftp.",
+          copyDeployMarkBtn: "Копирует команду очистки маркеров деплоя: npm run deploy:mark.",
+          copyCommitCmdBtn: "Копирует безопасную команду git commit с ограниченным списком файлов.",
+          checkVisiblePositionsBtn: "Проверяет позиции в GSC API только для видимых строк с target_query.",
+          clearGscKeyBtn: "Сбрасывает загруженный ключ Service Account и выбранный CSV-файл GSC.",
+          importGscCsvBtn: "Импортирует метрики из CSV Search Console в видимые строки таблицы.",
+        };
+
+        Object.entries(tipsById).forEach(([id, tip]) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          el.classList.add("has-tip");
+          el.dataset.tip = tip;
+          el.title = tip;
+        });
+
+        const dynamicSelectors = [
+          ['[data-open-mark]', "Открывает страницу в VS Code, ставит статус in_progress и дату проверки."],
+          ['[data-mark-ready]', "Ставит статус ready, отметку 100% и сегодняшнюю дату."],
+          ['[data-mark-update]', "Ставит статус needs_update, отметку no и сегодняшнюю дату."],
+        ];
+
+        dynamicSelectors.forEach(([selector, tip]) => {
+          trackerBody.querySelectorAll(selector).forEach((button) => {
+            button.classList.add("has-tip");
+            button.dataset.tip = tip;
+            button.title = tip;
+          });
+        });
+      }
+
       function markDirty() {
         state.isDirty = true;
       }
@@ -799,10 +877,10 @@
               <tr data-index="${index}" class="${isActive} ${isReady} ${deployStateClass} ${missingQueryClass}">
                 <td class="path">
                   <div>
-                    <a href="${buildVsCodeUrl(row.page_path)}">${escapeHtml(row.page_path)}</a>
+                    <a href="${buildVsCodeUrl(row.page_path)}" target="_blank" rel="noopener noreferrer">${escapeHtml(row.page_path)}</a>
                   </div>
                   <div class="path-meta">
-                    <a href="${buildVsCodeUrl(row.page_path)}">Открыть</a>
+                    <a href="${buildVsCodeUrl(row.page_path)}" target="_blank" rel="noopener noreferrer">Открыть</a>
                     <button type="button" class="ghost" data-open-mark="${index}">Открыть и в работу</button>
                     <button type="button" class="mark-ready" data-mark-ready="${index}">Готово</button>
                     <button type="button" class="mark-update" data-mark-update="${index}">Доработать</button>
@@ -859,6 +937,7 @@
           .join("");
 
         bindInputs();
+        applyButtonTooltips();
         rebuildClusterFilter();
         applyFilters();
         renderSummary();
@@ -1270,7 +1349,7 @@
           }
 
           let updated = 0;
-          const checkedAt = new Date().toISOString().slice(0, 19).replace("T", " ");
+          const checkedAt = getLocalDateTime();
           const visibleRows = state.rows.filter((row) => rowMatchesFilters(row));
 
           for (const row of visibleRows) {
@@ -1318,6 +1397,26 @@
         const encodedCommand = encodeURIComponent(commandId);
         const encodedArgs = encodeURIComponent(JSON.stringify(args));
         return `vscode://command/${encodedCommand}?${encodedArgs}`;
+      }
+
+      function openExternalTarget(url) {
+        const opened = window.open(url, "_blank", "noopener,noreferrer");
+        if (!opened) {
+          setStatus("Браузер заблокировал открытие. Разреши всплывающие окна для этой страницы.");
+          return false;
+        }
+        return true;
+      }
+
+      function getLocalDateTime() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
       }
 
       function toBase64UrlFromBuffer(arrayBuffer) {
@@ -1459,7 +1558,7 @@
         try {
           setStatus("Получаю доступ к Google Search Console...");
           const accessToken = await getGoogleAccessToken(gscCredentials);
-          const checkedAt = new Date().toISOString().slice(0, 19).replace("T", " ");
+          const checkedAt = getLocalDateTime();
 
           for (let i = 0; i < rowsToCheck.length; i += 1) {
             const row = rowsToCheck[i];
@@ -1523,9 +1622,13 @@
         }
 
         markDirty();
-        window.location.href = buildVsCodeUrl(row.page_path);
+        const opened = openExternalTarget(buildVsCodeUrl(row.page_path));
         renderTable();
-        setStatus(`Открыл ${row.page_path} в VS Code и поставил статус in_progress.`);
+        if (opened) {
+          setStatus(`Открыл ${row.page_path} в VS Code и поставил статус in_progress.`);
+        } else {
+          setStatus(`Поставил статус in_progress для ${row.page_path}, но VS Code не открылся (блокировка браузера).`);
+        }
       }
 
       function markReady(rowIndex) {
@@ -1695,13 +1798,13 @@
       document.getElementById("todayBtn").addEventListener("click", setTodayForVisibleRows);
       document.getElementById("resetFiltersBtn").addEventListener("click", resetFilters);
       document.getElementById("openTrackerBtn").addEventListener("click", () => {
-        window.location.href = buildVsCodeUrl("Doc/pages-tracker.csv");
+        openExternalTarget(buildVsCodeUrl("Doc/pages-tracker.csv"));
       });
       document.getElementById("openTasksBtn").addEventListener("click", () => {
-        window.location.href = buildVsCodeUrl(".vscode/tasks.json");
+        openExternalTarget(buildVsCodeUrl(".vscode/tasks.json"));
       });
       document.getElementById("runCommitTaskBtn").addEventListener("click", () => {
-        window.location.href = buildVsCodeCommandUrl("workbench.action.tasks.runTask", ["Git: Commit Changes"]);
+        openExternalTarget(buildVsCodeCommandUrl("workbench.action.tasks.runTask", ["Git: Commit Changes"]));
       });
       document.getElementById("copySyncBtn").addEventListener("click", () => {
         copyText("npm run sync:pages", "Команда sync скопирована: npm run sync:pages");
@@ -1713,7 +1816,7 @@
         copyText("npm run deploy:mark", "Команда очистки маркеров скопирована: npm run deploy:mark");
       });
       document.getElementById("copyCommitCmdBtn").addEventListener("click", () => {
-        copyText("git add -A && git commit -m \"chore: update pages tracker data\"", "Команда commit скопирована.");
+        copyText("git add Doc/pages-tracker.csv Doc/pages-tracker.html .vscode/tasks.json && git commit -m \"chore: update pages tracker workflow\"", "Команда commit скопирована.");
       });
       document.getElementById("checkVisiblePositionsBtn").addEventListener("click", checkVisibleRowsPositions);
       document.getElementById("importGscCsvBtn").addEventListener("click", importGscCsvToVisibleRows);
@@ -1745,6 +1848,8 @@
       [searchInput, statusFilter, clusterFilter, readyFilter, gscDataFilter, focusPage].forEach((element) => {
         element.addEventListener(element.tagName === "SELECT" ? "change" : "input", applyFilters);
       });
+
+      applyButtonTooltips();
 
       window.addEventListener("beforeunload", (event) => {
         if (!state.isDirty) {
