@@ -11,3 +11,4 @@ _pginfo/
 hosting-deploy-*.zip
 __pycache__/
 *.py[cod]
+.tools/
