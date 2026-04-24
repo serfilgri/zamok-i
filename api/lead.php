@@ -9,6 +9,40 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   exit;
 }
 
+// Rate limiting: max 5 requests per hour per IP
+function check_rate_limit(string $ip): bool {
+  $rate_limit_file = sys_get_temp_dir() . '/lead_rate_limit_' . md5($ip) . '.json';
+  $max_requests = 5;
+  $time_window = 3600; // 1 hour in seconds
+  $now = time();
+
+  $data = [];
+  if (file_exists($rate_limit_file)) {
+    $content = file_get_contents($rate_limit_file);
+    $data = json_decode($content ?: '[]', true) ?: [];
+  }
+
+  // Remove old timestamps outside the time window
+  $data = array_filter($data, fn($timestamp) => ($now - $timestamp) < $time_window);
+
+  if (count($data) >= $max_requests) {
+    return false;
+  }
+
+  // Add current timestamp
+  $data[] = $now;
+  file_put_contents($rate_limit_file, json_encode($data));
+
+  return true;
+}
+
+$client_ip = $_SERVER["REMOTE_ADDR"] ?? "unknown";
+if (!check_rate_limit($client_ip)) {
+  http_response_code(429);
+  echo json_encode(["ok" => false, "error" => "rate_limit_exceeded"], JSON_UNESCAPED_UNICODE);
+  exit;
+}
+
 $rawBody = file_get_contents("php://input");
 $payload = json_decode($rawBody ?: "", true);
 

@@ -39,6 +39,8 @@ Redirect 301 /service/zamena/pomenyat-zamok-vhodnoy.html https://zamok-i.ru/serv
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     # Content-Security-Policy для защиты от XSS
+    # Note: 'unsafe-inline' required for Google Tag Manager inline scripts
+    # Consider migrating to nonce-based CSP in future for better security
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://tagmanager.google.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com https://www.google-analytics.com https://www.googletagmanager.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://tagassistant.google.com; frame-src https://www.googletagmanager.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
     # Запрет MIME-sniffing для защиты от подмены типа контента
     Header always set X-Content-Type-Options "nosniff"

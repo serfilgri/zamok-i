@@ -38,7 +38,7 @@ async function loadServicesData() {
         return data;
       }
     } catch (e) {
-      console.warn("Failed to parse inline services-data:", e);
+      // Silent fail - fallback to fetch
     }
   }
 
@@ -52,10 +52,7 @@ async function loadServicesData() {
     const data = await response.json();
     return Array.isArray(data) ? data : [];
   } catch (error) {
-    console.warn(
-      "services-data.json is unavailable, service cards are not rendered:",
-      error,
-    );
+    // Silent fail - return empty array
     return [];
   }
 }
@@ -359,7 +356,6 @@ async function handleForm(e) {
       setSubmitState(btn, previousText, { disabled: false });
     }, 2500);
   } catch (error) {
-    console.error("Lead submit failed:", error);
     setSubmitState(btn, "Ошибка отправки. Повторить", {
       background: "#000",
       color: "#fff",
