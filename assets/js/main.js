@@ -432,6 +432,34 @@ function scheduleNonCriticalInit(task) {
   );
 }
 
+function toggleDistricts() {
+  const hiddenItems = document.querySelectorAll('.district-item--hidden');
+  const visibleItems = document.querySelectorAll('a.district-item[href*="kronshtadtskiy"], a.district-item[href*="kurortnyy"]');
+  const moreButton = document.getElementById('showMoreDistricts');
+  
+  if (!moreButton) return;
+  
+  const isExpanded = moreButton.getAttribute('aria-expanded') === 'true';
+  
+  if (isExpanded) {
+    // Скрываем районы
+    visibleItems.forEach(item => {
+      item.classList.add('district-item--hidden');
+    });
+    moreButton.textContent = '+ ещё 2 района';
+  } else {
+    // Показываем районы
+    hiddenItems.forEach(item => {
+      item.classList.remove('district-item--hidden');
+    });
+    moreButton.textContent = 'Скрыть';
+  }
+  
+  moreButton.setAttribute('aria-expanded', String(!isExpanded));
+}
+
+window.toggleDistricts = toggleDistricts;
+
 initReviewsToggle();
 initSeoBlockToggle();
 initIndexContactForm();
