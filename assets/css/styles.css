@@ -155,3 +155,180 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+/* Guarantees Section - Наши гарантии */
+.guarantees {
+  padding: 80px 0;
+  background: #f9f9f9;
+  border-bottom: 4px solid var(--black);
+}
+
+.guarantees__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.guarantees__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.guarantee-card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 32px 28px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.guarantee-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--black);
+}
+
+.guarantee-card__icon {
+  width: 72px;
+  height: 72px;
+  background: var(--primary);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.guarantee-card__icon .material-symbols-outlined {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.guarantee-card__title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.guarantee-card__text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #333;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.guarantee-card__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #f5f5f5;
+  border: 2px solid var(--black);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.guarantee-card__badge .material-symbols-outlined {
+  font-size: 1.2rem;
+  color: var(--black);
+}
+
+.guarantees__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.guarantees__info-box {
+  display: flex;
+  gap: 24px;
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  max-width: 820px;
+  width: 100%;
+}
+
+.guarantees__info-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: var(--primary);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guarantees__info-icon .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.guarantees__info-content h4 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.guarantees__info-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guarantees__info-content ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.guarantees__info-content ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 900;
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .guarantees {
+    padding: 60px 0;
+  }
+
+  .guarantees__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .guarantee-card {
+    padding: 28px 24px;
+  }
+
+  .guarantees__info-box {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .guarantees__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
