@@ -332,3 +332,174 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Lock Guide Section - Как выбрать замок */
+.lock-guide {
+  padding: 80px 0;
+  background: var(--white);
+  border-bottom: 4px solid var(--black);
+}
+
+.lock-guide__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.lock-guide__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.guide-card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 32px 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.guide-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--black);
+}
+
+.guide-card__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--primary);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.guide-card__icon .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.guide-card__title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.guide-card__recommendation {
+  padding: 12px 16px;
+  background: #f5f5f5;
+  border: 2px solid var(--black);
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.guide-card__recommendation strong {
+  display: block;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.guide-card__brands,
+.guide-card__price {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.guide-card__label {
+  font-weight: 700;
+  color: #666;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.guide-card__price strong {
+  font-size: 1.1rem;
+  color: var(--black);
+  font-weight: 900;
+}
+
+.guide-card__why {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #eee;
+}
+
+.guide-card__why p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 8px;
+}
+
+.lock-guide__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.lock-guide__info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--primary);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.lock-guide__info .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.lock-guide__info p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--black);
+}
+
+.lock-guide__info strong {
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .lock-guide {
+    padding: 60px 0;
+  }
+
+  .lock-guide__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .guide-card {
+    padding: 28px 20px;
+  }
+
+  .lock-guide__info {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lock-guide__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
