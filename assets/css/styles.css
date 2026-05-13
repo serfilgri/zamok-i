@@ -750,3 +750,22 @@
     font-size: 0.8rem;
   }
 }
+
+/* Lock Types Grid - 3 columns layout */
+.lock-types__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .lock-types__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .lock-types__grid {
+    grid-template-columns: 1fr;
+  }
+}
