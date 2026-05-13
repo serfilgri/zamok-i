@@ -673,6 +673,104 @@
                 </div>
             </div>
         </section>
+
+        <!-- Секция "Калькулятор стоимости" -->
+        <section class="calculator" id="calculator">
+            <div class="container">
+                <div class="calculator__header">
+                    <div class="tag mb-16">Калькулятор</div>
+                    <h2 class="section-title">Рассчитайте<br>стоимость</h2>
+                    <div class="section-line"></div>
+                    <p style="max-width: 580px; margin-top: 20px; font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #555;">
+                        Выберите тип услуги, замка и район — получите примерную стоимость. Точную цену назовём после осмотра.
+                    </p>
+                </div>
+                
+                <div class="calculator__form">
+                    <!-- Шаг 1: Тип услуги -->
+                    <div class="calculator__step">
+                        <label class="calculator__label">1. Выберите услугу</label>
+                        <div class="calculator__options">
+                            <button class="calculator__option" data-service="vskrytie" data-price="1200">
+                                <span class="material-symbols-outlined">lock_open</span>
+                                <span>Вскрытие замка</span>
+                            </button>
+                            <button class="calculator__option" data-service="zamena" data-price="1500">
+                                <span class="material-symbols-outlined">construction</span>
+                                <span>Замена замка</span>
+                            </button>
+                            <button class="calculator__option" data-service="remont" data-price="1000">
+                                <span class="material-symbols-outlined">build</span>
+                                <span>Ремонт замка</span>
+                            </button>
+                            <button class="calculator__option" data-service="ustanovka" data-price="1800">
+                                <span class="material-symbols-outlined">add_circle</span>
+                                <span>Установка замка</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 2: Тип замка -->
+                    <div class="calculator__step">
+                        <label class="calculator__label">2. Тип замка</label>
+                        <div class="calculator__options">
+                            <button class="calculator__option" data-lock="cilindrovyy" data-price="0">
+                                <span class="material-symbols-outlined">vpn_key</span>
+                                <span>Цилиндровый</span>
+                            </button>
+                            <button class="calculator__option" data-lock="suvaldnyy" data-price="500">
+                                <span class="material-symbols-outlined">lock</span>
+                                <span>Сувальдный</span>
+                            </button>
+                            <button class="calculator__option" data-lock="vreznoj" data-price="0">
+                                <span class="material-symbols-outlined">door_front</span>
+                                <span>Врезной</span>
+                            </button>
+                            <button class="calculator__option" data-lock="elektronnyy" data-price="3000">
+                                <span class="material-symbols-outlined">sensors</span>
+                                <span>Электронный</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 3: Район -->
+                    <div class="calculator__step">
+                        <label class="calculator__label">3. Район СПб</label>
+                        <div class="calculator__options">
+                            <button class="calculator__option" data-district="central" data-price="0">
+                                <span class="material-symbols-outlined">location_city</span>
+                                <span>Центральные районы</span>
+                            </button>
+                            <button class="calculator__option" data-district="sleeping" data-price="200">
+                                <span class="material-symbols-outlined">apartment</span>
+                                <span>Спальные районы</span>
+                            </button>
+                            <button class="calculator__option" data-district="kad" data-price="500">
+                                <span class="material-symbols-outlined">directions_car</span>
+                                <span>За КАД</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Результат -->
+                    <div class="calculator__result" id="calculatorResult">
+                        <div class="calculator__result-icon">
+                            <span class="material-symbols-outlined">calculate</span>
+                        </div>
+                        <div class="calculator__result-content">
+                            <p class="calculator__result-label">Примерная стоимость:</p>
+                            <p class="calculator__result-price" id="resultPrice">Выберите параметры</p>
+                            <p class="calculator__result-note">Точную цену назовём после осмотра двери и замка</p>
+                        </div>
+                        <a class="btn btn--black" href="tel:+79219488172">
+                            <span class="material-symbols-outlined" style="font-size: 1rem !important">phone</span>
+                            Вызвать мастера
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Блок популярных услуг для SEO и внутренней перелинковки -->
         <section class="services" id="popular-services">
             <div class="container">
@@ -2334,5 +2432,6 @@
             <span class="material-symbols-outlined">arrow_upward</span>
         </button>
         <script src="assets/js/main.js?v=20260318001"></script>
+        <script src="assets/js/calculator.js?v=20260513001"></script>
     </body>
 </html>
