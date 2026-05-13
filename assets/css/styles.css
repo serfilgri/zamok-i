@@ -677,3 +677,76 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Lock Types - Pros/Cons/Recommend */
+.lock-card__pros-cons {
+  margin: 16px 0;
+  padding: 16px;
+  background: #f9f9f9;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.lock-card__pros,
+.lock-card__cons,
+.lock-card__recommend {
+  margin-bottom: 12px;
+}
+
+.lock-card__pros strong,
+.lock-card__cons strong,
+.lock-card__recommend strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.lock-card__pros strong {
+  color: #28a745;
+}
+
+.lock-card__cons strong {
+  color: #dc3545;
+}
+
+.lock-card__recommend strong {
+  color: #007bff;
+}
+
+.lock-card__pros ul,
+.lock-card__cons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lock-card__pros ul li,
+.lock-card__cons ul li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding-left: 0;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.lock-card__recommend {
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .lock-card__pros-cons {
+    padding: 12px;
+  }
+  
+  .lock-card__pros ul li,
+  .lock-card__cons ul li,
+  .lock-card__recommend {
+    font-size: 0.8rem;
+  }
+}
