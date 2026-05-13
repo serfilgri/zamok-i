@@ -769,3 +769,47 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Testimonials - Enhanced Reviews */
+.review-rating {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #ffc107;
+}
+
+.review-meta {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #eee;
+  font-size: 0.85rem;
+}
+
+.review-details span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-details strong {
+  font-weight: 700;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .review-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
