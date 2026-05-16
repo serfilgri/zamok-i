@@ -271,79 +271,95 @@
     <section class="pricing" id="pricing-list">
       <div class="container">
         <div class="pricing__header">
-          <div class="tag" style="margin-bottom: 16px">Тарифы</div>
+          <div class="tag tag--mb">Тарифы</div>
           <h2 class="section-title">Базовые<br />тарифы</h2>
           <div class="section-line"></div>
+          <p class="pricing__subtitle">
+            Указаны стартовые цены для стандартных условий. Точная стоимость определяется после диагностики на месте.
+          </p>
         </div>
         <div class="pricing__grid">
           <div class="pricing-card">
-            <div class="pricing-card__name">Экстренный выезд</div>
+            <div class="pricing-card__header">
+              <div class="pricing-card__name">Экстренный выезд</div>
+              <div class="pricing-card__desc">Быстрое вскрытие замка</div>
+            </div>
             <div class="pricing-card__price">
-              <span class="pricing-card__currency">от</span
-              ><span class="pricing-card__amount">1 200</span
-              ><span class="pricing-card__period">₽</span>
+              <span class="pricing-card__currency">от</span>
+              <span class="pricing-card__amount">1 200</span>
+              <span class="pricing-card__period">₽</span>
             </div>
             <div class="pricing-card__divider"></div>
             <ul class="pricing-card__features">
               <li>
-                <span class="material-symbols-outlined">check</span>Вскрытие
-                стандартного замка
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Вскрытие стандартного замка</span>
               </li>
               <li>
-                <span class="material-symbols-outlined">check</span>Выезд
-                мастера
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Выезд мастера в течение часа</span>
               </li>
               <li>
-                <span class="material-symbols-outlined">check</span>Базовая
-                диагностика
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Базовая диагностика</span>
               </li>
             </ul>
+            <a href="tel:+79219488172" class="pricing-card__btn">Вызвать мастера</a>
           </div>
           <div class="pricing-card pricing-card--featured">
             <div class="pricing-card__badge">Популярно</div>
-            <div class="pricing-card__name">Замена замка</div>
+            <div class="pricing-card__header">
+              <div class="pricing-card__name">Замена замка</div>
+              <div class="pricing-card__desc">Полная замена механизма</div>
+            </div>
             <div class="pricing-card__price">
-              <span class="pricing-card__currency">от</span
-              ><span class="pricing-card__amount">1 500</span
-              ><span class="pricing-card__period">₽</span>
+              <span class="pricing-card__currency">от</span>
+              <span class="pricing-card__amount">1 500</span>
+              <span class="pricing-card__period">₽</span>
             </div>
             <div class="pricing-card__divider"></div>
             <ul class="pricing-card__features">
               <li>
-                <span class="material-symbols-outlined">check</span>Подбор
-                совместимого замка
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Подбор совместимого замка</span>
               </li>
               <li>
-                <span class="material-symbols-outlined">check</span>Монтаж и
-                настройка
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Монтаж и настройка</span>
               </li>
               <li>
-                <span class="material-symbols-outlined">check</span>Проверка
-                работы
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Проверка работы и гарантия</span>
               </li>
             </ul>
+            <a href="tel:+79219488172" class="pricing-card__btn pricing-card__btn--primary">Заказать замену</a>
           </div>
           <div class="pricing-card">
-            <div class="pricing-card__name">Ремонт механизма</div>
+            <div class="pricing-card__header">
+              <div class="pricing-card__name">Ремонт механизма</div>
+              <div class="pricing-card__desc">Восстановление работы</div>
+            </div>
             <div class="pricing-card__price">
-              <span class="pricing-card__currency">от</span
-              ><span class="pricing-card__amount">1 000</span
-              ><span class="pricing-card__period">₽</span>
+              <span class="pricing-card__currency">от</span>
+              <span class="pricing-card__amount">1 000</span>
+              <span class="pricing-card__period">₽</span>
             </div>
             <div class="pricing-card__divider"></div>
             <ul class="pricing-card__features">
               <li>
-                <span class="material-symbols-outlined">check</span>Диагностика
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Диагностика неисправности</span>
               </li>
               <li>
-                <span class="material-symbols-outlined">check</span
-                >Ремонт/настройка
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Ремонт или настройка</span>
               </li>
               <li>
-                <span class="material-symbols-outlined">check</span>Рекомендации
-                мастера
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Рекомендации мастера</span>
               </li>
             </ul>
+            <a href="tel:+79219488172" class="pricing-card__btn">Заказать ремонт</a>
           </div>
         </div>
       </div>
@@ -354,7 +370,7 @@
         <div class="about__grid">
           <div class="about__content">
             <div>
-              <div class="tag" style="margin-bottom: 16px">Ценообразование</div>
+              <div class="tag tag--mb">Ценообразование</div>
               <h2 class="about__title">
                 От чего зависит<span> стоимость</span>
               </h2>
@@ -380,7 +396,7 @@
           </div>
           <div class="about__content">
             <div>
-              <div class="tag" style="margin-bottom: 16px">Экономия</div>
+              <div class="tag tag--mb">Экономия</div>
               <h2 class="about__title">
                 Как сэкономить<span> на услугах</span>
               </h2>
@@ -394,12 +410,7 @@
                 Своевременное обращение при первых признаках неисправности
               </li>
             </ul>
-            <a
-              class="btn btn--black"
-              href="/contact.html"
-              style="width: fit-content"
-              >Получить консультацию</a
-            >
+            <a class="btn btn--black btn--fit" href="/contact.html">Получить консультацию</a>
           </div>
         </div>
       </div>
@@ -409,7 +420,7 @@
       <div class="container">
         <div class="services__header">
           <div>
-            <div class="tag" style="margin-bottom: 16px">Детали</div>
+            <div class="tag tag--mb">Детали</div>
             <h2 class="section-title">Что входит<br />в стоимость</h2>
             <div class="section-line"></div>
           </div>
@@ -452,12 +463,12 @@
       <div class="container">
         <div class="services__header">
           <div>
-            <div class="tag" style="margin-bottom: 16px">Вопросы и ответы</div>
+            <div class="tag tag--mb">Вопросы и ответы</div>
             <h2 class="section-title">Частые вопросы<br />о ценах</h2>
             <div class="section-line"></div>
           </div>
         </div>
-        <div class="services__grid" style="grid-template-columns: 1fr">
+        <div class="services__grid services__grid--single">
           <article class="service-card">
             <h3>Почему цена может измениться после диагностики?</h3>
             <p>
@@ -505,104 +516,99 @@
     </section>
 
     <!-- Дополнительные ссылки для перелинковки -->
-    <section
-      class="services"
-      id="pricing-links"
-      style="background: #f9f9f9; border-top: 1px solid #eee; padding: 60px 0"
-    >
+    <section class="services services--alt" id="pricing-links">
       <div class="container">
         <div class="services__header">
           <div>
-            <div class="tag" style="margin-bottom: 16px">Услуги</div>
+            <div class="tag tag--mb">Услуги</div>
             <h2 class="section-title">Популярные направления</h2>
             <div class="section-line"></div>
           </div>
         </div>
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-          "
-        >
-          <a
-            href="/service/vskrytie/avariynoe-vskrytie-zamkov.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >lock_open</span
-            >
-            Аварийное вскрытие замков
+        <div class="service-links-grid">
+          <a href="/service/vskrytie/avariynoe-vskrytie-zamkov.html" class="service-link-card">
+            <span class="material-symbols-outlined">lock_open</span>
+            <span>Аварийное вскрытие замков</span>
           </a>
-          <a
-            href="/service/zamena/zamena-zamka-dveri.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >construction</span
-            >
-            Замена замка в двери
+          <a href="/service/zamena/zamena-zamka-dveri.html" class="service-link-card">
+            <span class="material-symbols-outlined">construction</span>
+            <span>Замена замка в двери</span>
           </a>
-          <a
-            href="/service/zamena/zamena-cilindrovogo-zamka.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >tune</span
-            >
-            Замена цилиндрового замка
+          <a href="/service/zamena/zamena-cilindrovogo-zamka.html" class="service-link-card">
+            <span class="material-symbols-outlined">tune</span>
+            <span>Замена цилиндрового замка</span>
           </a>
-          <a
-            href="/service/remont/remont-zamkov-dvernyh.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >home_repair_service</span
-            >
-            Ремонт дверных замков
+          <a href="/service/remont/remont-zamkov-dvernyh.html" class="service-link-card">
+            <span class="material-symbols-outlined">home_repair_service</span>
+            <span>Ремонт дверных замков</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- SEO блок -->
+    <section class="seo-block" id="pricing-seo">
+      <div class="container">
+        <div class="seo-block__content" id="seoBlockContent">
+          <h2 class="section-title">Прозрачное ценообразование на замочные услуги</h2>
+          <p>
+            Стоимость услуг по замкам в Санкт-Петербурге формируется из нескольких ключевых факторов: тип запорного механизма (цилиндровый, сувальдный, электронный), сложность выполняемых работ (вскрытие, замена, ремонт, установка дополнительной защиты), время вызова мастера (дневной или ночной тариф), необходимость срочного выезда и состояние дверной конструкции. Мы придерживаемся политики честных цен без скрытых доплат — итоговая стоимость озвучивается после диагностики на месте и фиксируется до начала любых работ.
+          </p>
+          <p>
+            Базовые тарифы, указанные на сайте, актуальны для стандартных ситуаций: вскрытие обычного цилиндрового замка без повреждений, замена механизма в подготовленное посадочное место, ремонт без замены основных узлов. Если при осмотре выявляются дополнительные сложности — повреждённая дверная коробка, нестандартные размеры замка, необходимость фрезеровки металла — мастер обязательно согласует новую цену до начала работ. Вы всегда можете отказаться от услуги без каких-либо обязательств.
+          </p>
+
+          <h3 class="section-title">От чего зависит цена на вскрытие замков</h3>
+          <p>
+            Стоимость аварийного вскрытия замка начинается от 1 200 рублей для стандартных цилиндровых механизмов начального класса защиты. Вскрытие сувальдных замков с повышенной секретностью обойдётся дороже — от 2 500 рублей, так как требует специализированного инструмента и большего времени работы. Если замок был повреждён при попытке взлома или ключ сломался внутри механизма, цена может увеличиться до 3 500–4 000 рублей в зависимости от характера повреждений.
+          </p>
+          <p>
+            Ночной тариф (с 22:00 до 08:00) включает наценку 20–30% к базовой стоимости — это связано с повышенными расходами на логистику и работу специалистов в нерабочее время. Срочный выезд мастера в течение 15–20 минут также может повлиять на итоговую цену. Однако мы всегда стараемся найти оптимальное решение, которое устроит клиента по соотношению цены и качества.
+          </p>
+
+          <h3 class="section-title">Сколько стоит замена замка в двери</h3>
+          <p>
+            Замена цилиндра (личинки) в стандартном врезном замке — самая распространённая и доступная услуга. Стоимость начинается от 1 500 рублей с учётом работы мастера и нового цилиндра начального класса защиты. Если требуется цилиндр повышенной секретности с защитой от высверливания и бампинга, цена возрастает до 3 000–5 000 рублей в зависимости от производителя и класса защиты.
+          </p>
+          <p>
+            Полная замена врезного замка с демонтажем старого механизма, подготовкой посадочного места и установкой нового стоит от 2 000 рублей за работу плюс стоимость самого замка (от 1 500 до 8 000 рублей в зависимости от модели). Замена накладного замка обычно проще и дешевле — от 1 200 рублей за работу. Установка многозапорных систем на металлические двери — от 4 500 рублей, так как требует точной настройки всех запорных точек.
+          </p>
+
+          <h3 class="section-title">Цены на ремонт замков</h3>
+          <p>
+            Ремонт замка часто обходится дешевле полной замены и позволяет продлить срок службы механизма на несколько лет. Базовая диагностика и устранение мелких неисправностей (смазка, регулировка, замена пружин) стоит от 1 000 рублей. Замена отдельных элементов — ригелей, защёлок, цилиндрового механизма — от 1 500 до 3 000 рублей в зависимости от сложности работ и стоимости запчастей.
+          </p>
+          <p>
+            Если замок заедает, ключ проворачивается с трудом или механизм не фиксируется в закрытом положении — это повод вызвать мастера для диагностики. Своевременный ремонт обойдётся значительно дешевле, чем экстренное вскрытие и замена полностью вышедшего из строя замка. Мастер осмотрит механизм, определит причину неисправности и предложит оптимальное решение — ремонт или замену.
+          </p>
+
+          <h3 class="section-title">Дополнительные услуги и их стоимость</h3>
+          <p>
+            Установка броненакладки на цилиндр для защиты от высверливания и силового взлома — от 1 800 рублей с учётом работы и накладки. Монтаж дополнительного замка на входную дверь для повышения уровня безопасности — от 2 500 рублей за работу плюс стоимость замка. Усиление дверной коробки металлическими пластинами в местах крепления замка — от 2 000 рублей.
+          </p>
+          <p>
+            Изготовление дубликатов ключей на месте (для стандартных моделей) — от 300 рублей за ключ. Перекодировка цилиндрового замка без замены механизма — от 1 500 рублей. Установка глазка, цепочки или дополнительной ручки — от 800 рублей за единицу фурнитуры с учётом работы мастера.
+          </p>
+
+          <h3 class="section-title">Как сэкономить на услугах мастера</h3>
+          <p>
+            Вызов мастера в дневное время (с 08:00 до 20:00) позволяет избежать ночной наценки и сэкономить до 30% от стоимости услуги. Комплексный заказ нескольких услуг — например, замена замка и установка броненакладки — даёт скидку 10–15% на общую стоимость работ. Регулярное техническое обслуживание замков (смазка, чистка, регулировка) продлевает срок службы механизмов и предотвращает дорогостоящий ремонт.
+          </p>
+          <p>
+            Покупка замка через нашего мастера часто выгоднее, чем самостоятельное приобретение в магазине — мы работаем напрямую с производителями и предлагаем проверенные модели по оптовым ценам. Своевременное обращение при первых признаках неисправности (заедание, скрип, тугой ход ключа) позволяет обойтись недорогим ремонтом вместо полной замены механизма.
+          </p>
+
+          <h3 class="section-title">Гарантии и прозрачность работы</h3>
+          <p>
+            На все выполненные работы мы предоставляем официальную гарантию от 6 до 12 месяцев в зависимости от типа услуги и установленного оборудования. Гарантия распространяется на качество монтажа, работоспособность механизмов и отсутствие дефектов, возникших по вине мастера. Если в гарантийный период возникнут проблемы с установленным замком, мы бесплатно устраним все недостатки.
+          </p>
+          <p>
+            Мы работаем полностью легально — выдаём кассовые чеки, заключаем договоры на выполнение работ, предоставляем все необходимые документы для бухгалтерии. Оплата возможна наличными, банковской картой через терминал или безналичным переводом. Никаких предоплат — расчёт производится только после завершения работ и проверки качества установки.
+          </p>
+        </div>
+        <button class="btn btn--white seo-block__toggle" id="seoBlockToggle" type="button" aria-expanded="false">
+          Показать полностью
+        </button>
       </div>
     </section>
 
