@@ -12,3 +12,6 @@ hosting-deploy-*.zip
 __pycache__/
 *.py[cod]
 .tools/
+.opencode/
+*.backup*.html
+test-*.html
