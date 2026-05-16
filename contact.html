@@ -27,7 +27,7 @@
     <title>Контакты zamok-i — телефон мастера по замкам в СПб</title>
     <meta
       name="description"
-      content="Контакты zamok-i: телефон, режим работы и форма заявки на услуги мастера по замкам."
+      content="Контакты службы замков zamok-i в СПб: ☎ +7 (921) 948-81-72. Работаем ежедневно 08:00-22:00. Выезд мастера за 30 минут. Оставьте заявку онлайн!"
     />
     <meta
       name="robots"
@@ -214,6 +214,15 @@
       </div>
     </nav>
 
+    <nav class="breadcrumb" aria-label="Хлебные крошки">
+      <div class="container">
+        <ul class="breadcrumb__list">
+          <li><a href="/">Главная</a></li>
+          <li aria-current="page">Контакты</li>
+        </ul>
+      </div>
+    </nav>
+
     <section class="hero">
       <div class="container">
         <div class="hero__grid">
@@ -257,7 +266,7 @@
       <div class="container">
         <div class="contact__grid">
           <div>
-            <div class="tag" style="margin-bottom: 20px">Оставить заявку</div>
+            <div class="tag tag--mb" style="margin-bottom: 20px">Оставить заявку</div>
             <h2 class="contact__title">Оставьте <span>заявку</span></h2>
             <div class="contact__info">
               <div class="contact__info-item">
@@ -292,11 +301,7 @@
                 />
               </div>
             </div>
-            <button
-              type="submit"
-              class="btn btn--yellow"
-              style="width: 100%; justify-content: center"
-            >
+            <button type="submit" class="btn btn--yellow" style="width: 100%; justify-content: center">
               Отправить заявку →
             </button>
           </form>
@@ -309,7 +314,7 @@
         <div class="about__grid">
           <div class="about__content">
             <div>
-              <div class="tag" style="margin-bottom: 16px">Контакты</div>
+              <div class="tag tag--mb">Контакты</div>
               <h2 class="about__title">Каналы связи<span> и порядок обращения</span></h2>
             </div>
             <p class="about__text">
@@ -334,7 +339,7 @@
           </div>
           <div class="about__content">
             <div>
-              <div class="tag" style="margin-bottom: 16px">Информация</div>
+              <div class="tag tag--mb">Информация</div>
               <h2 class="about__title">
                 Режим работы<span> и зона выезда</span>
               </h2>
@@ -347,12 +352,7 @@
               <li>Выезд от 30 минут</li>
               <li>Гарантия до 12 месяцев</li>
             </ul>
-            <a
-              class="btn btn--black"
-              href="tel:+79219488172"
-              style="width: fit-content"
-              >Позвонить мастеру</a
-            >
+            <a class="btn btn--black btn--fit" href="tel:+79219488172">Позвонить мастеру</a>
           </div>
         </div>
       </div>
@@ -362,7 +362,7 @@
       <div class="container">
         <div class="services__header">
           <div>
-            <div class="tag" style="margin-bottom: 16px">Информация</div>
+            <div class="tag tag--mb">Информация</div>
             <h2 class="section-title">Как мы<br />работаем</h2>
             <div class="section-line"></div>
           </div>
@@ -403,12 +403,12 @@
       <div class="container">
         <div class="services__header">
           <div>
-            <div class="tag" style="margin-bottom: 16px">Вопросы и ответы</div>
+            <div class="tag tag--mb">Вопросы и ответы</div>
             <h2 class="section-title">Частые вопросы<br />о связи с нами</h2>
             <div class="section-line"></div>
           </div>
         </div>
-        <div class="services__grid" style="grid-template-columns: 1fr">
+        <div class="services__grid services__grid--single">
           <article class="service-card">
             <h3>Как быстро ответит оператор?</h3>
             <p>
@@ -444,109 +444,125 @@
               Сестрорецк, Пушкин, Павловск, Гатчина.
             </p>
           </article>
+          <article class="service-card">
+            <h3>Какие способы оплаты принимаете?</h3>
+            <p>
+              Оплата возможна наличными, банковской картой через терминал или безналичным переводом. Мастер приезжает с мобильным терминалом для оплаты картой. После оплаты вы получаете кассовый чек и гарантийный талон на выполненные работы.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Нужна ли предоплата за услуги?</h3>
+            <p>
+              Нет, предоплата не требуется. Оплата производится только после завершения работ и проверки качества. Мастер озвучивает точную стоимость после диагностики на месте, и только после вашего согласия приступает к работе.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Предоставляете ли гарантию на работы?</h3>
+            <p>
+              Да, на все выполненные работы предоставляется официальная гарантия от 6 до 12 месяцев в зависимости от типа услуги. Гарантия распространяется на качество монтажа и работоспособность установленных механизмов. В гарантийный период мы бесплатно устраним любые недостатки.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Перелинковка с услугами -->
-    <section
-      class="services"
-      id="contact-services"
-      style="background: #f9f9f9; border-top: 1px solid #eee; padding: 60px 0"
-    >
+    <section class="services services--alt" id="contact-services">
       <div class="container">
         <div class="services__header">
           <div>
-            <div class="tag" style="margin-bottom: 16px">Услуги</div>
+            <div class="tag tag--mb">Услуги</div>
             <h2 class="section-title">Популярные направления</h2>
             <div class="section-line"></div>
           </div>
         </div>
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-          "
-        >
-          <a
-            href="/service/vskrytie/avariynoe-vskrytie-zamkov.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >lock_open</span
-            >
-            Аварийное вскрытие замков
+        <div class="service-links-grid">
+          <a href="/service/vskrytie/avariynoe-vskrytie-zamkov.html" class="service-link-card">
+            <span class="material-symbols-outlined">lock_open</span>
+            <span>Аварийное вскрытие замков</span>
           </a>
-          <a
-            href="/service/zamena/zamena-zamka-dveri.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >construction</span
-            >
-            Замена замка в двери
+          <a href="/service/zamena/zamena-zamka-dveri.html" class="service-link-card">
+            <span class="material-symbols-outlined">construction</span>
+            <span>Замена замка в двери</span>
           </a>
-          <a
-            href="/service/zamena/zamena-cilindrovogo-zamka.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >tune</span
-            >
-            Замена цилиндрового замка
+          <a href="/service/zamena/zamena-cilindrovogo-zamka.html" class="service-link-card">
+            <span class="material-symbols-outlined">tune</span>
+            <span>Замена цилиндрового замка</span>
           </a>
-          <a
-            href="/service/remont/remont-zamkov-dvernyh.html"
-            style="
-              padding: 20px;
-              background: #fff;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-decoration: none;
-              color: #000;
-              font-weight: 600;
-            "
-          >
-            <span
-              class="material-symbols-outlined"
-              style="color: #22c55e; margin-right: 8px"
-              >home_repair_service</span
-            >
-            Ремонт дверных замков
+          <a href="/service/remont/remont-zamkov-dvernyh.html" class="service-link-card">
+            <span class="material-symbols-outlined">home_repair_service</span>
+            <span>Ремонт дверных замков</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- SEO блок -->
+    <section class="seo-block" id="contact-seo">
+      <div class="container">
+        <div class="seo-block__content" id="seoBlockContent">
+          <h2 class="section-title">Как связаться с мастером по замкам в Санкт-Петербурге</h2>
+          <p>
+            Служба замков zamok-i работает в Санкт-Петербурге и Ленинградской области с 2014 года. Мы специализируемся на экстренном вскрытии замков, замене и ремонте запорных механизмов любой сложности. Связаться с нами можно по телефону +7 (921) 948-81-72 или через форму обратной связи на этой странице. Оператор принимает заявки ежедневно с 08:00 до 22:00 без выходных и праздничных дней.
+          </p>
+          <p>
+            При звонке оператор уточнит адрес выезда, тип замка и характер проблемы, согласует удобное время прибытия мастера и озвучит предварительную стоимость услуги. Среднее время выезда по центральным районам Санкт-Петербурга составляет 30–40 минут, в отдалённые районы и пригороды — до 60 минут. В экстренных ситуациях возможен срочный выезд в течение 15–20 минут с доплатой за срочность.
+          </p>
+
+          <h3 class="section-title">Способы связи с нами</h3>
+          <p>
+            Для вашего удобства мы предлагаем несколько способов связи. Самый быстрый — позвонить по телефону +7 (921) 948-81-72. Оператор ответит в течение 1–3 минут и оформит заявку на выезд мастера. Если вы не можете позвонить прямо сейчас, заполните форму обратной связи на этой странице — мы перезвоним вам в течение 5–10 минут для уточнения деталей.
+          </p>
+          <p>
+            Также вы можете написать нам на электронную почту info@zamok-i.ru с описанием проблемы и контактными данными. Этот способ подходит для неэкстренных ситуаций, когда требуется консультация по выбору замка, расчёт стоимости работ или запись на удобное время. Мы отвечаем на письма в течение рабочего дня, обычно в течение 2–3 часов.
+          </p>
+
+          <h3 class="section-title">Зоны обслуживания в Санкт-Петербурге</h3>
+          <p>
+            Мы обслуживаем все районы Санкт-Петербурга: Центральный, Адмиралтейский, Василеостровский, Выборгский, Калининский, Кировский, Красногвардейский, Красносельский, Московский, Невский, Петроградский, Петродворцовый, Приморский, Пушкинский и Фрунзенский. Выезжаем на все станции метро и в любые микрорайоны города. Время прибытия мастера зависит от удалённости объекта и текущей загруженности специалистов.
+          </p>
+          <p>
+            Также работаем в городах и посёлках Ленинградской области: Мурино, Кудрово, Шушары, Парголово, Сестрорецк, Зеленогорск, Пушкин, Павловск, Колпино, Петергоф, Гатчина, Всеволожск, Кронштадт. Для отдалённых населённых пунктов время выезда может составлять до 90 минут в зависимости от расстояния и дорожной ситуации. Стоимость выезда в пригороды уточняйте у оператора при оформлении заявки.
+          </p>
+
+          <h3 class="section-title">Преимущества обращения в zamok-i</h3>
+          <p>
+            Мы работаем официально, предоставляем все необходимые документы: договор на оказание услуг, кассовый чек, гарантийный талон. На все выполненные работы даём гарантию от 6 до 12 месяцев в зависимости от типа услуги и установленного оборудования. Если в гарантийный период возникнут проблемы с замком по нашей вине, мы бесплатно устраним все недостатки.
+          </p>
+          <p>
+            Наши мастера имеют профильное образование и опыт работы от 5 лет. Каждый специалист проходит регулярное обучение и аттестацию, знает особенности работы с замками всех типов и производителей. Мастер приезжает с полным набором профессионального инструмента и комплектующими, что позволяет решить большинство задач за один визит без необходимости повторного выезда.
+          </p>
+
+          <h3 class="section-title">Что нужно для оформления заявки</h3>
+          <p>
+            Для оформления заявки на выезд мастера потребуется минимум информации: ваше имя, контактный телефон и адрес объекта. Желательно кратко описать проблему — например, «потерял ключи от входной двери», «замок заклинило, ключ не поворачивается», «нужно заменить цилиндр замка». Это поможет мастеру подготовить необходимые инструменты и комплектующие.
+          </p>
+          <p>
+            Если вы не знаете точное название или модель замка — не страшно. Мастер определит тип механизма на месте и подберёт оптимальное решение. При необходимости специалист привезёт с собой несколько вариантов замков разных ценовых категорий, чтобы вы могли выбрать подходящий по соотношению цены, качества и уровня защиты.
+          </p>
+
+          <h3 class="section-title">Порядок работы после обращения</h3>
+          <p>
+            После оформления заявки оператор сообщит вам ориентировочное время прибытия мастера. За 10–15 минут до приезда специалист позвонит и уточнит, что вы на месте. По прибытии мастер осмотрит замок, определит причину неисправности или подберёт подходящий вариант для замены, озвучит точную стоимость работ и материалов. Только после вашего согласия с ценой мастер приступит к выполнению работы.
+          </p>
+          <p>
+            Среднее время выполнения стандартных работ: вскрытие замка — 15–30 минут, замена цилиндра — 20–40 минут, полная замена врезного замка — 40–60 минут, ремонт механизма — 30–50 минут. После завершения работ мастер проверит корректность работы замка, выдаст все ключи, гарантийный талон и кассовый чек. Оплата производится по факту выполнения работ наличными или банковской картой через терминал.
+          </p>
+
+          <h3 class="section-title">Часто задаваемые вопросы о связи</h3>
+          <p>
+            <strong>Можно ли вызвать мастера ночью?</strong> Наш стандартный режим работы — с 08:00 до 22:00. В экстренных случаях возможен ночной выезд с 22:00 до 08:00, но с наценкой 30–50% к базовой стоимости услуги. Ночной выезд согласовывается индивидуально с оператором.
+          </p>
+          <p>
+            <strong>Сколько стоит выезд мастера?</strong> Выезд мастера по Санкт-Петербургу бесплатный при условии выполнения работ. Если после диагностики вы решите отказаться от услуги, стоимость выезда составит 500 рублей. Для пригородов Ленобласти стоимость выезда уточняйте у оператора.
+          </p>
+          <p>
+            <strong>Как быстро приедет мастер?</strong> Среднее время выезда по центральным районам СПб — 30–40 минут, по отдалённым районам — 40–60 минут, в пригороды Ленобласти — 60–90 минут. В часы пик (утро и вечер будних дней) время может увеличиться на 10–20 минут из-за дорожной ситуации.
+          </p>
+        </div>
+        <button class="btn btn--white seo-block__toggle" id="seoBlockToggle" type="button" aria-expanded="false">
+          Показать полностью
+        </button>
       </div>
     </section>
 
