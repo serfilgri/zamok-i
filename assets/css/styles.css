@@ -1811,3 +1811,401 @@ h3 {
     padding: 24px 20px;
   }
 }
+
+/* Company History Section */
+.company-history {
+  padding: 80px 0;
+  background: var(--white);
+  border-bottom: 4px solid var(--black);
+}
+
+.company-history__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--black);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-year {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--black);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  flex-grow: 1;
+  padding-top: 8px;
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+.company-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--primary);
+  border: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .company-history {
+    padding: 60px 0;
+  }
+
+  .timeline::before {
+    left: 40px;
+  }
+
+  .timeline-item {
+    gap: 20px;
+  }
+
+  .timeline-year {
+    width: 60px;
+    height: 60px;
+    font-size: 1.1rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .company-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* Team Section */
+.team-section {
+  padding: 80px 0;
+  background: #f9f9f9;
+  border-bottom: 4px solid var(--black);
+}
+
+.team-section__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.team-card {
+  background: var(--white);
+  border: var(--border);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow);
+}
+
+.team-card__icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.team-card__icon .material-symbols-outlined {
+  font-size: 3rem;
+  color: var(--black);
+}
+
+.team-card__name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.team-card__position {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.team-card__experience {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.team-card__description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.team-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.team-card__skills span {
+  background: #f5f5f5;
+  border: 2px solid var(--black);
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.team-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-benefit {
+  text-align: center;
+  padding: 24px 20px;
+  background: var(--white);
+  border: var(--border);
+}
+
+.team-benefit .material-symbols-outlined {
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+
+.team-benefit strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.team-benefit p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 60px 0;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-benefits {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Geography Section */
+.geography-section {
+  padding: 80px 0;
+  background: var(--white);
+  border-bottom: 4px solid var(--black);
+}
+
+.geography-section__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.districts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.district-group {
+  background: #f9f9f9;
+  border: var(--border);
+  padding: 28px 24px;
+}
+
+.district-group h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--black);
+}
+
+.district-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.district-group ul li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.district-group ul li:last-child {
+  border-bottom: none;
+}
+
+.district-group ul li::before {
+  content: "→ ";
+  color: #666;
+  margin-right: 8px;
+}
+
+.geography-note {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--primary);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 28px 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.geography-note .material-symbols-outlined {
+  font-size: 2.5rem;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.geography-note p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.geography-note strong {
+  font-weight: 900;
+  display: block;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  .geography-section {
+    padding: 60px 0;
+  }
+
+  .districts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .geography-note {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+}
+
+/* Fix testimonial card hover - yellow instead of black */
+.testimonial-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow);
+  background: var(--primary) !important;
+}
