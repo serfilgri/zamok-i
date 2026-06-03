@@ -660,7 +660,9 @@
       .services__grid {
         display: grid;
         grid-template-columns: 1fr;
+        gap: 24px;
         border: var(--border);
+        padding: 32px;
       }
 
       .services__grid--single {
