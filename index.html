@@ -322,7 +322,7 @@
         </nav>
         <section id="home" class="hero">
             <div style="position: absolute; inset: 0; background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.015) 1px, transparent 1px); background-size: 32px 32px; opacity: 0.4; pointer-events: none;"></div>
-            <style style="
+        <style>
 @media (min-width: 768px) {
     .hero__grid {
         grid-template-columns: 1.05fr 0.95fr !important;
@@ -400,7 +400,74 @@
     color: #212529;
     background-color: rgba(0,0,0,0.03);
 }
-">@media (min-width: 768px) { .hero__grid {  grid-template-columns: 1.05fr 0.95fr !important;  gap: 72px !important;  align-items: center !important; }  .hero__trust {  grid-template-columns: 1fr 1fr !important; }  .hero__image-box {  aspect-ratio: 3/4 !important; } } @media (max-width: 767px) { .hero__grid {  gap: 36px !important; }  .hero__title {  font-size: 2rem !important;  line-height: 1.2 !important;  margin: 16px 0 12px 0 !important; }  .hero__subtitle {  font-size: 1rem !important;  line-height: 1.55 !important;  margin-bottom: 24px !important; }  .hero__buttons {  flex-direction: column !important;  width: 100% !important;  margin-bottom: 28px !important; }  .hero__buttons .btn {  width: 100% !important;  justify-content: center !important;  padding: 13px 24px !important; }  .hero__trust {  grid-template-columns: 1fr !important;  gap: 16px !important; }  .hero__trust-item {  font-size: 0.95rem !important; }  .hero__image-box {  aspect-ratio: 4/3 !important;  border-radius: 16px !important; }  .hero__badge {  bottom: 14px !important;  right: 14px !important;  padding: 11px 18px !important;  font-size: 0.9rem !important; }  .hero__badge strong {  font-size: 1.4rem !important; }  .hero__price-badge {  margin-bottom: 14px !important; } } .btn--black:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); } .btn--white:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }</style>
+
+/* Process Cards - Added inline */
+.process-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 32px 28px;
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0px var(--black);
+    background: var(--white);
+    min-height: 100%;
+}
+
+.process-card:hover {
+    box-shadow: 8px 8px 0px var(--black);
+    transform: translate(-2px, -2px);
+}
+
+.process-card__number {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #999;
+}
+
+.process-card__icon {
+    font-size: 3rem !important;
+    color: var(--primary);
+}
+
+.process-card h3 {
+    font-size: 1.15rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 1.25;
+}
+
+.process-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #333;
+}
+
+.process-card__time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+@media (min-width: 768px) {
+    .process__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .process__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+</style>
             <div class="container" style="position: relative; z-index: 1;">
                 <div class="hero__grid pinegrow-ui-helper-relative">
                     <div style="max-width: 580px;">
