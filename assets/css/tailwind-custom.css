@@ -2354,6 +2354,158 @@
         }
       }
 
+      /* ── BENEFITS ────────────────────────────────────────────────────── */
+      .benefits {
+        padding: 80px 0;
+        background: var(--white);
+        border-bottom: 4px solid var(--black);
+      }
+      .benefits__head {
+        margin-bottom: 48px;
+      }
+      .benefits__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 0;
+        border: var(--border);
+      }
+      .benefit-card {
+        padding: 36px 32px;
+        border: var(--border);
+        position: relative;
+        transition: background 0.2s, color 0.2s;
+      }
+      .benefit-card:hover {
+        background: var(--black);
+        color: var(--white);
+      }
+      .benefit-card__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        background: var(--primary);
+        border: var(--border);
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+      }
+      .benefit-card h3 {
+        font-size: 1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .benefit-card p {
+        font-size: 0.88rem;
+        color: #555;
+        line-height: 1.6;
+        transition: color 0.2s;
+      }
+      .benefit-card:hover p {
+        color: #ccc;
+      }
+
+      /* ── WORK-STAGES ─────────────────────────────────────────────────── */
+      .work-stages {
+        padding: 80px 0;
+        background: #f4f1e7;
+        border-bottom: 4px solid var(--black);
+      }
+      .work-stages__head {
+        margin-bottom: 48px;
+      }
+      .work-stages__timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0;
+        border: var(--border);
+      }
+      .stage {
+        padding: 36px 28px;
+        border: var(--border);
+        position: relative;
+        transition: background 0.2s, color 0.2s;
+      }
+      .stage:hover {
+        background: var(--black);
+        color: var(--white);
+      }
+      .stage__number {
+        font-size: 4.5rem;
+        font-weight: 900;
+        line-height: 1;
+        color: var(--primary);
+        margin-bottom: 16px;
+        display: block;
+      }
+      .stage h3 {
+        font-size: 1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .stage p {
+        font-size: 0.88rem;
+        color: #555;
+        line-height: 1.6;
+        transition: color 0.2s;
+      }
+      .stage:hover p {
+        color: #ccc;
+      }
+
+      /* ── BRANDS ──────────────────────────────────────────────────────── */
+      .brands {
+        padding: 80px 0;
+        background: var(--white);
+        border-bottom: 4px solid var(--black);
+      }
+      .brands__head {
+        margin-bottom: 40px;
+      }
+      .brands__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0;
+        border: var(--border);
+        margin-bottom: 24px;
+      }
+      .brand-item {
+        padding: 28px 24px;
+        border: var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: background 0.2s;
+      }
+      .brand-item:hover {
+        background: var(--primary);
+      }
+      .brand-item__logo {
+        font-size: 1.15rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .brand-item p {
+        font-size: 0.82rem;
+        color: #555;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .brands__note {
+        font-size: 0.9rem;
+        color: #666;
+        padding: 14px 20px;
+        border: 2px dashed #ccc;
+        background: #fafafa;
+      }
+
       /* ── REVIEWS ─────────────────────────────────────────────────────── */
       .reviews {
         padding: 80px 0;
