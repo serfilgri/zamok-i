@@ -294,6 +294,9 @@
                             <a href="/about.html">О нас</a>
                         </li>
                         <li>
+                            <a href="/blog/">Статьи</a>
+                        </li>
+                        <li>
                             <a href="/process.html">Как работаем</a>
                         </li>
                         <li>
@@ -314,6 +317,7 @@
             <div class="mobile-menu" id="mobileMenu">
                 <a href="/services.html">Услуги</a>
                 <a href="/about.html">О нас</a>
+                <a href="/blog/">Статьи</a>
                 <a href="/process.html">Как работаем</a>
                 <a href="/pricing.html">Цены</a>
                 <a href="/contact.html">Контакты</a>
@@ -465,6 +469,134 @@
 @media (min-width: 1024px) {
     .process__grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Calculator - Added inline */
+.calculator {
+    background: #f4f1e7;
+    border-bottom: 4px solid var(--black);
+    padding: 100px 0;
+}
+
+.calculator__header {
+    margin-bottom: 48px;
+}
+
+.calculator__form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calculator__step {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.calculator__label {
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--black);
+}
+
+.calculator__options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.calculator__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 20px;
+    background: var(--white);
+    border: 3px solid var(--black);
+    box-shadow: 4px 4px 0px var(--black);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.calculator__option:hover {
+    box-shadow: 6px 6px 0px var(--black);
+    transform: translate(-2px, -2px);
+}
+
+.calculator__option.active {
+    background: var(--primary);
+    box-shadow: 6px 6px 0px var(--black);
+    transform: translate(-2px, -2px);
+}
+
+.calculator__option .material-symbols-outlined {
+    font-size: 2.4rem !important;
+}
+
+.calculator__result {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 32px;
+    background: var(--white);
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0px var(--black);
+    margin-top: 16px;
+}
+
+.calculator__result-icon {
+    flex-shrink: 0;
+}
+
+.calculator__result-icon .material-symbols-outlined {
+    font-size: 3rem !important;
+    color: var(--primary);
+}
+
+.calculator__result-content {
+    flex: 1;
+}
+
+.calculator__result-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.calculator__result-price {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.calculator__result-note {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .calculator__options {
+        grid-template-columns: 1fr;
+    }
+    
+    .calculator__result {
+        flex-direction: column;
+        text-align: center;
     }
 }
 </style>
