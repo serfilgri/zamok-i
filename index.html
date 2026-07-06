@@ -34,6 +34,7 @@
         <meta name="twitter:title" content="Служба замков СПб — замена, вскрытие, ремонт | Выезд 30 мин">
         <meta name="twitter:description" content="Профессиональная служба замков в СПб: вскрытие, замена, ремонт. Выезд мастера за 30 минут. Работаем с 2014 года. Гарантия до 12 месяцев.">
         <meta name="twitter:image" content="https://zamok-i.ru/assets/images/webp/og-1200x630/zamena-zamka-multipoint-closeup.webp">
+        <link href="css/theme.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="assets/css/critical.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -326,280 +327,7 @@
         </nav>
         <section id="home" class="hero">
             <div style="position: absolute; inset: 0; background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.015) 1px, transparent 1px); background-size: 32px 32px; opacity: 0.4; pointer-events: none;"></div>
-        <style>
-@media (min-width: 768px) {
-    .hero__grid {
-        grid-template-columns: 1.05fr 0.95fr !important;
-        gap: 72px !important;
-        align-items: center !important;
-    }
-    .hero__trust {
-        grid-template-columns: 1fr 1fr !important;
-    }
-    .hero__image-box {
-        aspect-ratio: 3/4 !important;
-    }
-}
 
-@media (max-width: 767px) {
-    .hero__grid {
-        gap: 36px !important;
-    }
-    .hero__title {
-        font-size: 2rem !important;
-        line-height: 1.2 !important;
-        margin: 16px 0 12px 0 !important;
-    }
-    .hero__subtitle {
-        font-size: 1rem !important;
-        line-height: 1.55 !important;
-        margin-bottom: 24px !important;
-    }
-    .hero__buttons {
-        flex-direction: column !important;
-        width: 100% !important;
-        margin-bottom: 28px !important;
-    }
-    .hero__buttons .btn {
-        width: 100% !important;
-        justify-content: center !important;
-        padding: 13px 24px !important;
-    }
-    .hero__trust {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-    }
-    .hero__trust-item {
-        font-size: 0.95rem !important;
-    }
-    .hero__image-box {
-        aspect-ratio: 4/3 !important;
-        border-radius: 16px !important;
-    }
-    .hero__badge {
-        bottom: 14px !important;
-        right: 14px !important;
-        padding: 11px 18px !important;
-        font-size: 0.9rem !important;
-    }
-    .hero__badge strong {
-        font-size: 1.4rem !important;
-    }
-    .hero__price-badge {
-        margin-bottom: 14px !important;
-    }
-}
-
-.btn--black:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.btn--white:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.hero__label-line + span a:hover {
-    color: #212529;
-    background-color: rgba(0,0,0,0.03);
-}
-
-/* Process Cards - Added inline */
-.process-card {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    padding: 32px 28px;
-    border: 3px solid var(--black);
-    box-shadow: 6px 6px 0px var(--black);
-    background: var(--white);
-    min-height: 100%;
-}
-
-.process-card:hover {
-    box-shadow: 8px 8px 0px var(--black);
-    transform: translate(-2px, -2px);
-}
-
-.process-card__number {
-    font-size: 2.6rem;
-    font-weight: 900;
-    line-height: 1;
-    color: #999;
-}
-
-.process-card__icon {
-    font-size: 3rem !important;
-    color: var(--primary);
-}
-
-.process-card h3 {
-    font-size: 1.15rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    line-height: 1.25;
-}
-
-.process-card p {
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: #333;
-}
-
-.process-card__time {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #666;
-    margin-top: auto;
-    padding-top: 16px;
-    border-top: 1px solid #eee;
-}
-
-@media (min-width: 768px) {
-    .process__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .process__grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Calculator - Added inline */
-.calculator {
-    background: #f4f1e7;
-    border-bottom: 4px solid var(--black);
-    padding: 100px 0;
-}
-
-.calculator__header {
-    margin-bottom: 48px;
-}
-
-.calculator__form {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.calculator__step {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.calculator__label {
-    font-size: 1.1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: var(--black);
-}
-
-.calculator__options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-}
-
-.calculator__option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 24px 20px;
-    background: var(--white);
-    border: 3px solid var(--black);
-    box-shadow: 4px 4px 0px var(--black);
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-align: center;
-    transition: all 0.2s ease;
-}
-
-.calculator__option:hover {
-    box-shadow: 6px 6px 0px var(--black);
-    transform: translate(-2px, -2px);
-}
-
-.calculator__option.active {
-    background: var(--primary);
-    box-shadow: 6px 6px 0px var(--black);
-    transform: translate(-2px, -2px);
-}
-
-.calculator__option .material-symbols-outlined {
-    font-size: 2.4rem !important;
-}
-
-.calculator__result {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 32px;
-    background: var(--white);
-    border: 3px solid var(--black);
-    box-shadow: 6px 6px 0px var(--black);
-    margin-top: 16px;
-}
-
-.calculator__result-icon {
-    flex-shrink: 0;
-}
-
-.calculator__result-icon .material-symbols-outlined {
-    font-size: 3rem !important;
-    color: var(--primary);
-}
-
-.calculator__result-content {
-    flex: 1;
-}
-
-.calculator__result-label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #666;
-    margin-bottom: 8px;
-}
-
-.calculator__result-price {
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--black);
-    line-height: 1;
-    margin-bottom: 8px;
-}
-
-.calculator__result-note {
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.5;
-}
-
-@media (max-width: 640px) {
-    .calculator__options {
-        grid-template-columns: 1fr;
-    }
-    
-    .calculator__result {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-</style>
             <div class="container" style="position: relative; z-index: 1;">
                 <div class="hero__grid pinegrow-ui-helper-relative">
                     <div style="max-width: 580px;">
@@ -607,8 +335,7 @@
                             <div class="hero__label-line"></div>
                             <span>Санкт-Петербург &middot; Выезд ежедневно 08:00–22:00</span>
                         </div>
-                        <h1 class="hero__title">
-                    Служба замков в СПб </h1>
+                        <h1 class="hero__title section-heading">Срочный вызов мастера по замкам</h1>
                         <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 8px; border: 1px solid #dee2e6; margin-bottom: 16px; font-size: 0.95rem; font-weight: 500; color: #495057;">
                             <a href="service/vskrytie/vskrytie-zamkov-kvartire.html" style="color: #6c757d; text-decoration: none; transition: color 0.2s ease, background-color 0.2s ease; padding: 2px 6px; border-radius: 4px; cursor: pointer;">Вскрытие</a>
                             <span style="color: #dee2e6;">·</span>
@@ -616,25 +343,27 @@
                             <span style="color: #dee2e6;">·</span>
                             <a href="service/remont/remont-zamkov-dvernyh.html" style="color: #6c757d; text-decoration: none; transition: color 0.2s ease, background-color 0.2s ease; padding: 2px 6px; border-radius: 4px; cursor: pointer;">Ремонт</a>
                         </div>
-                        <div class="hero__price-badge">
-                            <span class="from">от</span>
-                            <span class="amount">1 500 ₽</span>
-                            <span class="unit">— работа + замок</span>
+                        <div class="hero__price-badge" style="display: inline-flex; align-items: baseline; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, #fff5e6 0%, #ffe4b3 100%); border: 2px solid #ffcd6b; border-radius: 12px; margin-bottom: 20px; font-weight: 600;">
+                            <span class="from" style="font-size: 0.9rem; color: #856404;">от</span>
+                            <span class="amount" style="font-size: 1.8rem; font-weight: 900; color: #000;">1 500 ₽</span>
+                            <span class="unit" style="font-size: 0.9rem; color: #856404;">работа + замок</span>
                         </div>
-                        <p class="hero__subtitle">
-                    Профессиональная служба замков в Санкт-Петербурге. Вскрываем, меняем и ремонтируем замки любой сложности. Выезд мастера за 30 минут, работаем с 2014 года. Без скрытых доплат, без повреждений двери, с гарантией до 12 месяцев. </p>
-                        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; padding: 18px 20px; background: linear-gradient(135deg, #fafbfc 0%, #f8f9fa 100%); border: 1px solid #e9ecef; border-radius: 12px;">
-                            <a href="tel:+79219488172" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #212529; font-size: 1.25rem; font-weight: 600; transition: color 0.2s ease;"> <span class="material-symbols-outlined" style="font-size: 1.3rem; color: #495057;">phone</span>
+                        <p class="hero__subtitle" style="font-size: 1.15rem; line-height: 1.6; color: #495057; margin-bottom: 32px;">Вскрываем, меняем и ремонтируем любые замки за 30 минут. Работаем честно: фиксированная цена, никаких скрытых доплат. Гарантия до 12 месяцев на все виды работ.</p>
+                        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; padding: 24px 28px; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border: 2px solid #e9ecef; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                            <a href="tel:+79219488172" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #212529; font-size: 1.5rem; font-weight: 700; transition: color 0.2s ease;"> <span class="material-symbols-outlined" style="font-size: 1.6rem; color: #495057;">phone</span>
         +7 (921) 948-81-72 </a>
-                            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #6c757d; padding-left: 34px;">
+                            <div style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: #6c757d; padding-left: 42px;">
+                                <span class="material-symbols-outlined" style="font-size: 1rem; color: #868e96;">schedule</span>
                                 <span>Ежедневно 08:00–22:00</span>
                             </div>
-                            <a href="mailto:info@zamok-spb.ru" style="text-decoration: none; color: #868e96; font-size: 0.85rem; padding-left: 34px; transition: color 0.2s ease;">info@zamok-spb.ru</a>
+                            <a href="mailto:info@zamok-i.ru" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #868e96; font-size: 0.9rem; padding-left: 42px; transition: color 0.2s ease;"> <span class="material-symbols-outlined" style="font-size: 1rem;">mail</span>
+        info@zamok-i.ru </a>
                         </div>
-                        <div class="hero__buttons">
-                            <a class="btn btn--black" href="tel:+79219488172" style="padding: 14px 28px; font-size: 1rem; transition: all 0.25s ease;"> <span class="material-symbols-outlined" style="font-size: 1.1rem !important">phone</span>
-                        Позвонить </a>
-                            <a class="btn btn--white" href="#contact" style="padding: 14px 28px; font-size: 1rem; transition: all 0.25s ease;">Оставить заявку</a>
+                        <div class="hero__buttons" style="display: flex; gap: 16px; margin-bottom: 36px;">
+                            <a class="btn btn--black" href="tel:+79219488172" style="padding: 16px 32px; font-size: 1.05rem; font-weight: 700; transition: all 0.25s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"> <span class="material-symbols-outlined" style="font-size: 1.2rem !important">phone</span>
+        Позвонить сейчас </a>
+                            <a class="btn btn--white" href="#contact" style="padding: 16px 32px; font-size: 1.05rem; font-weight: 700; transition: all 0.25s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        Заказать звонок </a>
                         </div>
                         <div class="hero__trust" role="list" aria-label="Преимущества">
                             <div class="hero__trust-item" role="listitem">
@@ -659,9 +388,9 @@
                         <div class="hero__image-box" style="position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; border-radius: 20px; box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);">
                             <img src="assets/images/webp/hero-800x480/zamena-zamka-multipoint-closeup.webp" alt="Мастер меняет замок на входной двери в Санкт-Петербурге" width="800" height="480" fetchpriority="high" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                         </div>
-                        <div class="hero__badge" style="position: absolute; bottom: 20px; right: 20px; background: #fff; padding: 14px 22px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); font-weight: 600; font-size: 0.95rem;">
-                            <strong style="display: block; font-size: 1.6rem; color: #000; line-height: 1;">30 мин</strong>
-                            Выезд
+                        <div class="hero__badge" style="position: absolute; bottom: 24px; right: 24px; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); padding: 18px 26px; border-radius: 16px; box-shadow: 0 12px 32px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.08); font-weight: 600; font-size: 1rem; border: 2px solid rgba(0,0,0,0.06);">
+                            <strong style="display: block; font-size: 2rem; color: #000; line-height: 1; margin-bottom: 4px; font-weight: 900;">30 мин</strong>
+                            <span style="color: #6c757d;">Приедем быстро</span>
                         </div>
                     </div>
                 </div>
@@ -690,7 +419,7 @@
             <div class="container">
                 <div class="process__header">
                     <div class="tag mb-16">Процесс работы</div>
-                    <h2 class="section-title">Как мы<br>работаем</h2>
+                    <h2 class="section-title section-heading">Как мы<br>работаем</h2>
                     <div class="section-line"></div>
                     <p style="max-width: 520px; margin-top: 20px; font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #555;">
             Прозрачный процесс от звонка до гарантии. Никаких сюрпризов — всё по плану и с вашего согласия. </p>
@@ -782,7 +511,7 @@
             <div class="container">
                 <div class="pricing-table__header">
                     <div class="tag mb-16">Прозрачные цены</div>
-                    <h2 class="section-title">
+                    <h2 class="section-title section-heading">
             Стоимость<br>замены замков в Санкт-Петербурге </h2>
                     <div class="section-line"></div>
                     <div class="pricing-table__note">
@@ -872,7 +601,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Секция "Калькулятор стоимости" -->
         <section class="calculator" id="calculator">
             <div class="container">
@@ -969,14 +697,13 @@
                 </div>
             </div>
         </section>
-
         <!-- Блок популярных услуг для SEO и внутренней перелинковки -->
         <section class="services" id="popular-services">
             <div class="container">
                 <div class="services__header">
                     <div>
                         <div class="tag mb-16">Популярные услуги</div>
-                        <h2 class="section-title">Наши основные<br>направления</h2>
+                        <h2 class="section-title section-heading">Наши основные<br>направления</h2>
                         <div class="section-line"></div>
                     </div>
                     <p style="
@@ -1034,7 +761,7 @@
                 <div class="services__header">
                     <div>
                         <div class="tag mb-16">Каталог</div>
-                        <h2 class="section-title">Услуги и полезные<br>страницы сайта</h2>
+                        <h2 class="section-title section-heading">Услуги и полезные<br>страницы сайта</h2>
                         <div class="section-line"></div>
                         <p style="
                 margin-top: 16px;
@@ -1207,6 +934,7 @@
                         </article>
                     </div>
                 </div>
+            </div>
         </section>
         <!-- Данные услуг для рендеринга карточек (inline, чтобы работало без fetch) -->
         <script id="services-data" type="application/json">
@@ -1277,7 +1005,7 @@
             <div class="container">
                 <div class="problems__header">
                     <div class="tag">Когда звонят нам</div>
-                    <h2 class="section-title" style="margin-top: 16px">
+                    <h2 class="section-title section-heading">
             Когда нужна<br>замена замка </h2>
                     <div class="section-line"></div>
                 </div>
@@ -1322,7 +1050,7 @@
                 <div class="lock-types__header">
                     <div>
                         <div class="tag" style="margin-bottom: 16px">Что устанавливаем</div>
-                        <h2 class="section-title">Какие замки<br>меняем</h2>
+                        <h2 class="section-title section-heading">Какие замки<br>меняем</h2>
                         <div class="section-line"></div>
                     </div>
                     <p style="
@@ -1524,7 +1252,7 @@
             <div class="container">
                 <div class="lock-guide__header">
                     <div class="tag mb-16">Гайд по выбору</div>
-                    <h2 class="section-title">Как выбрать<br>надёжный замок</h2>
+                    <h2 class="section-title section-heading">Как выбрать<br>надёжный замок</h2>
                     <div class="section-line"></div>
                     <p style="max-width: 580px; margin-top: 20px; font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #555;">
                         Подбираем замок под тип помещения, уровень безопасности и бюджет. Рекомендации от мастеров с 10-летним опытом. </p>
@@ -1634,7 +1362,7 @@
             <div class="container">
                 <div class="districts__header">
                     <div class="tag" style="margin-bottom: 16px">Зона выезда</div>
-                    <h2 class="section-title">Работаем<br>по всему СПб</h2>
+                    <h2 class="section-title section-heading">Работаем<br>по всему СПб</h2>
                     <div class="section-line" style="background: var(--black)"></div>
                     <p style="
               margin-top: 20px;
@@ -1762,7 +1490,7 @@
             <div class="container">
                 <div class="guarantees__header">
                     <div class="tag mb-16">Гарантии</div>
-                    <h2 class="section-title">Наши гарантии<br>и обязательства</h2>
+                    <h2 class="section-title section-heading">Наши гарантии<br>и обязательства</h2>
                     <div class="section-line"></div>
                     <p style="max-width: 580px; margin-top: 20px; font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #555;">
                         Работаем честно и открыто. Все условия фиксируем до начала работ, выдаём письменные гарантии и несём ответственность за результат. </p>
@@ -1844,17 +1572,15 @@
                 </div>
             </div>
         </section>
-
         <!-- Секция "Сертификаты и лицензии" -->
         <section class="certificates" id="certificates">
             <div class="container">
                 <div class="certificates__header">
                     <div class="tag mb-16">Документы</div>
-                    <h2 class="section-title">Сертификаты<br>и лицензии</h2>
+                    <h2 class="section-title section-heading">Сертификаты<br>и лицензии</h2>
                     <div class="section-line"></div>
                     <p style="max-width: 580px; margin-top: 20px; font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #555;">
-                        Работаем официально с 2014 года. Все мастера имеют профильное образование и сертификаты от производителей замков.
-                    </p>
+                        Работаем официально с 2014 года. Все мастера имеют профильное образование и сертификаты от производителей замков. </p>
                 </div>
                 <div class="certificates__grid">
                     <!-- Сертификат 1 -->
@@ -1865,7 +1591,6 @@
                         <h3 class="certificate-card__title">Сертификат специалиста</h3>
                         <p class="certificate-card__desc">Профильное образование и квалификация мастеров</p>
                     </article>
-
                     <!-- Сертификат 2 -->
                     <article class="certificate-card">
                         <div class="certificate-card__image">
@@ -1874,7 +1599,6 @@
                         <h3 class="certificate-card__title">Партнёр Mul-T-Lock</h3>
                         <p class="certificate-card__desc">Официальный партнёр производителя замков</p>
                     </article>
-
                     <!-- Сертификат 3 -->
                     <article class="certificate-card">
                         <div class="certificate-card__image">
@@ -1883,7 +1607,6 @@
                         <h3 class="certificate-card__title">Сертификат CISA</h3>
                         <p class="certificate-card__desc">Авторизованный установщик замков CISA</p>
                     </article>
-
                     <!-- Сертификат 4 -->
                     <article class="certificate-card">
                         <div class="certificate-card__image">
@@ -1893,25 +1616,22 @@
                         <p class="certificate-card__desc">Официальная регистрация ИП с 2014 года</p>
                     </article>
                 </div>
-
                 <!-- Дополнительная информация -->
                 <div class="certificates__footer">
                     <div class="certificates__info">
                         <span class="material-symbols-outlined">verified</span>
                         <p>
-                            Все документы актуальны и подтверждены. Работаем официально, выдаём чеки и гарантийные талоны. ИНН и ОГРНИП предоставляем по запросу.
-                        </p>
+                            Все документы актуальны и подтверждены. Работаем официально, выдаём чеки и гарантийные талоны. ИНН и ОГРНИП предоставляем по запросу. </p>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Секция "Примеры работ" -->
         <section class="portfolio" id="portfolio">
             <div class="container">
                 <div class="portfolio__header">
                     <div class="tag mb-16">Наши работы</div>
-                    <h2 class="section-title">Примеры<br>выполненных работ</h2>
+                    <h2 class="section-title section-heading">Примеры<br>выполненных работ</h2>
                     <div class="section-line"></div>
                     <p style="max-width: 580px; margin-top: 20px; font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #555;">
                         Реальные кейсы замены замков в Санкт-Петербурге. Фото, описание задачи, решение и результат. </p>
@@ -2052,7 +1772,7 @@
                 <div class="services__header">
                     <div>
                         <div class="tag" style="margin-bottom: 16px">Отзывы клиентов</div>
-                        <h2 class="section-title">15 историй<br>по замене замков</h2>
+                        <h2 class="section-title section-heading">15 историй<br>по замене замков</h2>
                         <div class="section-line"></div>
                     </div>
                     <p style="
@@ -2200,7 +1920,7 @@
                 <div class="faq__grid">
                     <div>
                         <div class="tag" style="margin-bottom: 16px">Вопросы и ответы</div>
-                        <h2 class="section-title">Часто<br>спрашивают</h2>
+                        <h2 class="section-title section-heading">Часто<br>спрашивают</h2>
                         <div class="section-line"></div>
                         <p class="faq__intro-text">
               Не нашли ответ? Позвоните — расскажем, что именно подойдёт для
@@ -2403,7 +2123,7 @@
         <section class="cta-banner" aria-label="Призыв к действию">
             <div class="container">
                 <div class="cta-banner__inner">
-                    <h2 class="cta-banner__title">
+                    <h2 class="cta-banner__title section-heading">
             Нужна замена замка?<br> <span>Позвоните прямо сейчас.</span> </h2>
                     <p class="cta-banner__sub">
             Мастер выедет за 30 минут. Цена фиксируется до начала работ. Выезд
@@ -2423,7 +2143,7 @@
                 <div class="contact__grid">
                     <div>
                         <div class="tag" style="margin-bottom: 20px">Оставить заявку</div>
-                        <h2 class="contact__title">
+                        <h2 class="contact__title section-heading">
               Закажите замену<br><span>замка онлайн</span> </h2>
                         <div class="contact__info">
                             <div class="contact__info-item">
@@ -2591,6 +2311,6 @@
             <span class="material-symbols-outlined">arrow_upward</span>
         </button>
         <script src="assets/js/main.js?v=20260318001"></script>
-        <script src="assets/js/calculator.js?v=20260513001"></script>
+        <script src="assets/js/calculator.js?v=20260706001"></script>
     </body>
 </html>
